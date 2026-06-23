@@ -1,8 +1,14 @@
-# TODO - Navigation Panel Style Update
+# TODO - Mobile Responsiveness Update
 
-- [x] Review relevant files (`src/App.vue`, `styles.css`)
-- [x] Build and confirm styling plan
-- [x] Update `styles.css` for navigation panel container style
-- [x] Update list (`ul`, `li`, `a`) styles to match reference sidebar look
-- [x] Adjust spacing/alignment with heading and main container
-- [x] Final review of updated CSS
+- [x] Define responsive strategy and breakpoints for existing layout/pages.
+- [x] Update global layout rules (header, sidebar, content container) for tablet and mobile.
+- [x] Update navigation behavior for small screens (hide desktop nav links/actions, adjust sidebar interaction).
+- [x] Update typography and spacing scales across breakpoints.
+- [x] Make button examples and button groups wrap/stack cleanly on smaller screens.
+- [x] Add comprehensive media queries for common breakpoints:
+  - [x] ≤ 1200px (small desktop/laptop)
+  - [x] ≤ 992px (tablet landscape)
+  - [x] ≤ 768px (tablet portrait)
+  - [x] ≤ 576px (mobile)
+  - [x] ≤ 400px (small mobile)
+- [x] Validate no overlap between fixed header/sidebar and content at all breakpoints.
