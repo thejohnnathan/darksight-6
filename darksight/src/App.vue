@@ -61,22 +61,22 @@ onBeforeUnmount(() => {
               aria-haspopup="true"
               @click="toggleSolutionsMenu"
             >
-              <span>Solutions</span>
+              <span>Components</span>
               <svg class="dropdown-chevron" :class="{ open: isSolutionsOpen }" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true">
                 <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
               </svg>
             </button>
 
-            <div v-if="isSolutionsOpen" class="top-dropdown-menu" role="menu" aria-label="Solutions menu">
-              <a href="#" class="top-dropdown-item" role="menuitem">Overview</a>
-              <a href="#" class="top-dropdown-item" role="menuitem">Analytics</a>
-              <a href="#" class="top-dropdown-item" role="menuitem">Automation</a>
-              <a href="#" class="top-dropdown-item" role="menuitem">Integrations</a>
+            <div v-if="isSolutionsOpen" class="top-dropdown-menu" role="menu" aria-label="Components menu">
+              <a href="#" class="top-dropdown-item" role="menuitem">Buttons</a>
+              <a href="#" class="top-dropdown-item" role="menuitem">Card</a>
+              <a href="#" class="top-dropdown-item" role="menuitem">Inputs</a>
+              <a href="#" class="top-dropdown-item" role="menuitem">Pagination</a>
             </div>
           </div>
-          <a href="#" class="top-link">About us</a>
-          <a href="#" class="top-link">Pricing</a>
-          <a href="#" class="top-link">Resources</a>
+          <a href="#" class="top-link">Documentation</a>
+          <a href="#" class="top-link">Getting Started</a>
+          <a href="#" class="top-link">Themes</a>
         </nav>
 
         <div class="top-nav-actions">
@@ -97,57 +97,67 @@ onBeforeUnmount(() => {
 
       <nav>
         <ul>
-          <li class="nav-section-label">Main</li>
+          <li class="nav-section-label">Components</li>
           <li>
             <a href="#" class="nav-link active">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M226-186h143v-260h222v260h143v-392L480-770 226-578v392Zm-71 71v-499l325-245 325 245v499H520v-260H440v260H155Zm325-353Z"/></svg>
-              <span class="link-label">Home</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M160-240q-33 0-56.5-23.5T80-320v-320q0-33 23.5-56.5T160-720h640q33 0 56.5 23.5T880-640v320q0 33-23.5 56.5T800-240H160Zm0-80h640v-320H160v320Zm130-40h60v-90h90v-60h-90v-90h-60v90h-90v60h90v90Zm-130 40v-320 320Z"/></svg>
+              <span class="link-label">Buttons</span>
             </a>
           </li>
           <li>
             <a href="#" class="nav-link">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M207-134q-31 0-52-21t-21-52v-546q0-31 21-52t52-21h546q31 0 52 21t21 52v546q0 31-21 52t-52 21H207Zm0-71h546v-546H207v546Zm130-77h286v-71H337v71Zm-130-130h546v-71H207v71Zm130-130h286v-71H337v71Zm-130-130h546v-71H207v71Zm0-199v546-546Z"/></svg>
-              <span class="link-label">Orders</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M200-160q-33 0-56.5-23.5T120-240v-480q0-33 23.5-56.5T200-800h560q33 0 56.5 23.5T840-720v480q0 33-23.5 56.5T760-160H200Zm0-80h560v-480H200v480Zm0 0v-480 480Z"/></svg>
+              <span class="link-label">Card</span>
             </a>
           </li>
           <li>
             <a href="#" class="nav-link">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M226-115q-31 0-52-21t-21-52v-583q0-31 21-52t52-21h377l203 203v453q0 31-21 52t-52 21H226Zm0-71h507v-346H566v-238H226v584Zm269-381Zm-90 310h149q15 0 25-10t10-25q0-15-10-25t-25-10H405q-15 0-25 10t-10 25q0 15 10 25t25 10Zm0-128h149q15 0 25-10t10-25q0-15-10-25t-25-10H405q-15 0-25 10t-10 25q0 15 10 25t25 10Zm0-128h59q15 0 25-10t10-25q0-15-10-25t-25-10h-59q-15 0-25 10t-10 25q0 15 10 25t25 10Z"/></svg>
-              <span class="link-label">Documentation</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M280-160v-80h400v80H280Zm-80-160q-33 0-56.5-23.5T120-400v-320q0-33 23.5-56.5T200-800h560q33 0 56.5 23.5T840-720v320q0 33-23.5 56.5T760-320H200Zm0-80h560v-320H200v320Zm0 0v-320 320Z"/></svg>
+              <span class="link-label">Inputs</span>
             </a>
           </li>
           <li>
             <a href="#" class="nav-link">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M550-186h231v-231H550v231Zm0-302h231v-231H550v231Zm-302 302h231v-231H248v231Zm0-302h231v-231H248v231Zm-72 445q-30 0-52-22t-22-52v-730q0-30 22-52t52-22h730q30 0 52 22t22 52v730q0 30-22 52t-52 22H176Zm0-72h730v-730H176v730Zm0-730v730-730Z"/></svg>
-              <span class="link-label">Map Overview</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M120-280v-80h80v80h-80Zm160 0v-80h120v80H280Zm200 0v-80h120v80H480Zm200 0v-80h160v80H680ZM120-440v-80h160v80H120Zm240 0v-80h240v80H360Zm320 0v-80h160v80H680Z"/></svg>
+              <span class="link-label">Pagination</span>
             </a>
           </li>
           <li>
             <a href="#" class="nav-link">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M175-172v-466h71v466h-71Zm269 0v-616h71v616h-71Zm269 0v-296h71v296h-71Z"/></svg>
-              <span class="link-label">Statistics</span>
-            </a>
-          </li>
-
-          <li class="nav-section-label">Communication</li>
-          <li>
-            <a href="#" class="nav-link">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M198-106q-37 0-63-26t-26-63v-495q0-37 26-63t63-26h565q37 0 63 26t26 63v495q0 37-26 63t-63 26H198Zm282-299L180-596v401h600v-401L480-405Zm0-71 300-190H180l300 190Zm-300-190v470-470Z"/></svg>
-              <span class="link-label">Inbox</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Zm0 200q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280Zm0-240q17 0 28.5-11.5T520-560q0-17-11.5-28.5T480-600q-17 0-28.5 11.5T440-560q0 17 11.5 28.5T480-520Z"/></svg>
+              <span class="link-label">Radio Buttons</span>
             </a>
           </li>
           <li>
             <a href="#" class="nav-link">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M210-99q-30 0-52-22t-22-52v-614q0-30 22-52t52-22h540q30 0 52 22t22 52v614q0 30-22 52t-52 22H210Zm0-71h540v-614H210v614Zm270-305Zm-93 108 223-223-50-51-172 172-77-78-51 51 127 129Zm0-185 223-223-50-51-172 172-77-78-51 51 127 129Z"/></svg>
-              <span class="link-label">Couriers</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+              <span class="link-label">Search Input</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M240-240h480v-80H240v80Zm-40 120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"/></svg>
+              <span class="link-label">Snackbar</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M115-395q-35-35-35-85t35-85q35-35 85-35t85 35q35 35 35 85t-35 85q-35 35-85 35t-85-35Zm113.5-56.5Q240-463 240-480t-11.5-28.5Q217-520 200-520t-28.5 11.5Q160-497 160-480t11.5 28.5Q183-440 200-440t28.5-11.5ZM395-395q-35-35-35-85t35-85q35-35 85-35t85 35q35 35 35 85t-35 85q-35 35-85 35t-85-35Zm113.5-56.5Q520-463 520-480t-11.5-28.5Q497-520 480-520t-28.5 11.5Q440-497 440-480t11.5 28.5Q463-440 480-440t28.5-11.5ZM675-395q-35-35-35-85t35-85q35-35 85-35t85 35q35 35 35 85t-35 85q-35 35-85 35t-85-35Z"/></svg>
+              <span class="link-label">Stepper</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-280H200v280Zm0-360h560v-200H200v200Zm280-80h240v-80H480v80Zm-280 80v-200 200Z"/></svg>
+              <span class="link-label">Tabs</span>
             </a>
           </li>
         </ul>
       </nav>
     </aside>
     <section class="container" :class="{ 'container-collapsed': isCollapsed }">
-      <div class="header-subtitle">Components</div>
-      <h1 class="header-title">Button Styles</h1>
+      <div class="header-subtitle">UI Component Library</div>
+      <h1 class="header-title">Buttons</h1>
       <p>
         <button>Submit<svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="currentColor"><path d="M630-444H192v-72h438L429-717l51-51 288 288-288 288-51-51 201-201Z"/></svg></button>
       </p>
