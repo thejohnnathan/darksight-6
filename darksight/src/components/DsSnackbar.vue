@@ -10,7 +10,8 @@
       }
     ]"
     role="status"
-    aria-live="polite"
+    :aria-live="type === 'error' ? 'assertive' : 'polite'"
+    aria-atomic="true"
   >
     <div class="ds-snackbar__icon" aria-hidden="true">
       <svg v-if="type === 'info'" viewBox="0 0 24 24" fill="none">

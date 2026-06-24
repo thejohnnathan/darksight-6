@@ -1,8 +1,14 @@
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 
-export function useSnackbar(initialVisible = true) {
-  const visible = ref(initialVisible)
+const DEFAULT_DURATION = 4000
+
+export function useSnackbar() {
+  const queue = ref([])
+  const current = ref(null)
+  const visible = ref(false)
   let timerId = null
+
+  const isShowing = computed(() => visible.value && !!current.value)
 
   const clearTimer = () => {
     if (timerId) {
@@ -11,32 +17,110 @@ export function useSnackbar(initialVisible = true) {
     }
   }
 
-  const show = (duration = 0) => {
-    visible.value = true
+  const normalizeOptions = (options = {}) => {
+    const {
+      id,
+      type = 'info',
+      message = '',
+      actionLabel = '',
+      onAction = null,
+      dismissible = true,
+      duration = DEFAULT_DURATION
+    } = options
+
+    return {
+      id: id || `${type}-${message}-${actionLabel || 'none'}`,
+      type,
+      message,
+      actionLabel,
+      onAction,
+      dismissible,
+      duration: typeof duration === 'number' ? duration : DEFAULT_DURATION
+    }
+  }
+
+  const showNext = () => {
     clearTimer()
 
-    if (duration > 0) {
-      timerId = setTimeout(() => {
-        visible.value = false
-        timerId = null
-      }, duration)
+    if (!queue.value.length) {
+      current.value = null
+      visible.value = false
+      return
     }
+
+    current.value = queue.value.shift()
+    visible.value = true
+
+    if (current.value.duration > 0) {
+      timerId = setTimeout(() => {
+        closeCurrent()
+      }, current.value.duration)
+    }
+  }
+
+  const enqueue = (options) => {
+    const item = normalizeOptions(options)
+
+    const isDuplicateCurrent =
+      current.value &&
+      current.value.type === item.type &&
+      current.value.message === item.message &&
+      current.value.actionLabel === item.actionLabel
+
+    const isDuplicateQueued = queue.value.some(
+      (queued) =>
+        queued.type === item.type &&
+        queued.message === item.message &&
+        queued.actionLabel === item.actionLabel
+    )
+
+    if (isDuplicateCurrent || isDuplicateQueued) {
+      return item.id
+    }
+
+    queue.value.push(item)
+
+    if (!visible.value) {
+      showNext()
+    }
+
+    return item.id
+  }
+
+  const closeCurrent = () => {
+    clearTimer()
+    visible.value = false
+    current.value = null
+    showNext()
   }
 
   const hide = () => {
     clearTimer()
+    queue.value = []
     visible.value = false
+    current.value = null
   }
 
-  const toggle = () => {
-    visible.value = !visible.value
+  const handleAction = () => {
+    if (!current.value) return
+
+    const callback = current.value.onAction
+    if (typeof callback === 'function') {
+      callback(current.value)
+    }
+
+    closeCurrent()
   }
 
   return {
     visible,
-    show,
+    current,
+    queue,
+    isShowing,
+    enqueue,
+    closeCurrent,
     hide,
-    toggle,
-    clearTimer
+    clearTimer,
+    handleAction
   }
 }

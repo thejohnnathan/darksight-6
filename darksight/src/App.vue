@@ -76,6 +76,26 @@ const breadcrumbIconPathMap = {
     "M440-320h80v-80h-80v80Zm40-160q17 0 28.5-11.5T520-520q0-17-11.5-28.5T480-560q-17 0-28.5 11.5T440-520q0 17 11.5 28.5T480-480Zm0 400q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-82 31.5-155t86-127.5Q252-817 325-848.5T480-880q82 0 155 31.5t127.5 86Q817-708 848.5-635T880-480q0 82-31.5 155t-86 127.5Q708-143 635-111.5T480-80Z"
 };
 
+const groupedComponentLinks = [
+  { to: "/buttons", label: "Buttons" },
+  { to: "/inputs", label: "Inputs" },
+  { to: "/radio-buttons", label: "Radio Buttons" },
+  { to: "/search-input", label: "Search Input" },
+  { to: "/card", label: "Card" }
+];
+
+const groupedNavigationLinks = [
+  { to: "/tabs", label: "Tabs" },
+  { to: "/breadcrumb", label: "Breadcrumb" },
+  { to: "/pagination", label: "Pagination" },
+  { to: "/stepper", label: "Stepper" }
+];
+
+const groupedFeedbackLinks = [
+  { to: "/snackbar", label: "Snackbar" },
+  { to: "/tooltip", label: "Tooltip" }
+];
+
 const isHomeRoute = computed(() => route.path === "/");
 
 const currentBreadcrumb = computed(() => {
@@ -131,7 +151,7 @@ onBeforeUnmount(() => {
 
 <template>
   <main>
-    <header class="heading-panel">
+    <header class="heading-panel glass">
       <div class="top-nav">
         <RouterLink to="/" class="brand" aria-label="Darksight home">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true">
@@ -158,17 +178,12 @@ onBeforeUnmount(() => {
             </button>
 
             <div v-if="isComponentsOpen" class="top-dropdown-menu" role="menu" aria-label="Components menu">
-              <RouterLink to="/buttons" class="top-dropdown-item" role="menuitem">Buttons</RouterLink>
-              <RouterLink to="/breadcrumb" class="top-dropdown-item" role="menuitem">Breadcrumb</RouterLink>
-              <RouterLink to="/card" class="top-dropdown-item" role="menuitem">Card</RouterLink>
-              <RouterLink to="/inputs" class="top-dropdown-item" role="menuitem">Inputs</RouterLink>
-              <RouterLink to="/pagination" class="top-dropdown-item" role="menuitem">Pagination</RouterLink>
-              <RouterLink to="/radio-buttons" class="top-dropdown-item" role="menuitem">Radio Buttons</RouterLink>
-              <RouterLink to="/search-input" class="top-dropdown-item" role="menuitem">Search Input</RouterLink>
-              <RouterLink to="/snackbar" class="top-dropdown-item" role="menuitem">Snackbar</RouterLink>
-              <RouterLink to="/stepper" class="top-dropdown-item" role="menuitem">Stepper</RouterLink>
-              <RouterLink to="/tabs" class="top-dropdown-item" role="menuitem">Tabs</RouterLink>
-              <RouterLink to="/tooltip" class="top-dropdown-item" role="menuitem">Tooltip</RouterLink>
+              <p class="top-dropdown-group-label">Components</p>
+              <RouterLink v-for="item in groupedComponentLinks" :key="item.to" :to="item.to" class="top-dropdown-item" role="menuitem">{{ item.label }}</RouterLink>
+              <p class="top-dropdown-group-label">Navigation</p>
+              <RouterLink v-for="item in groupedNavigationLinks" :key="item.to" :to="item.to" class="top-dropdown-item" role="menuitem">{{ item.label }}</RouterLink>
+              <p class="top-dropdown-group-label">Feedback</p>
+              <RouterLink v-for="item in groupedFeedbackLinks" :key="item.to" :to="item.to" class="top-dropdown-item" role="menuitem">{{ item.label }}</RouterLink>
             </div>
           </div>
           <RouterLink to="/themes" class="top-link">Themes</RouterLink>
@@ -563,6 +578,15 @@ onBeforeUnmount(() => {
 
 .navigation-panel.collapsed .nav-panel-brand-name {
   display: none;
+}
+
+.top-dropdown-group-label {
+  margin: 6px 8px 2px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--toolbar-muted-text, #8693a8);
 }
 
 :deep(.nav-tooltip-wrap) {

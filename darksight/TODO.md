@@ -1,3 +1,4 @@
-- [x] Align `.nav-panel-header` icon vertically with nav icons when sidebar is collapsed
-- [x] Ensure small-screen navigation panel header icon alignment matches icon-only nav links
-- [x] Update task checklist completion after CSS edits
+- [x] Revert DocsSection dark-mode global overrides in `src/components/DocsSection.vue`
+- [x] Localize and normalize dark-mode styling in `src/pages/TooltipPage.vue` to match other pages
+- [x] Localize and normalize dark-mode styling in `src/pages/SnackbarPage.vue` to match other pages
+- [x] Verify Tooltip and Snackbar pages in dark mode visually

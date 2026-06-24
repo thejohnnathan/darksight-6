@@ -1,11 +1,13 @@
 <template>
   <section class="stepper-page">
+    <header class="hero">
     <div class="header-subtitle">UI Component Library</div>
-    <h1 class="header-title">Stepper</h1>
+    <h2 class="header-title">Stepper</h2>
     <p>
       Steppers break complex workflows into clear, sequential stages so users understand progress and next actions.
       Use them for multi-step tasks where order, completion state, and guidance matter.
     </p>
+  </header>
 
     <div class="stepper-demo-stack">
       <article class="stepper-example">

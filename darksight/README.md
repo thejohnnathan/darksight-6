@@ -1,38 +1,136 @@
-# darksight
+# Darksight
 
-This template should help get you started developing with Vue 3 in Vite.
+Darksight is a Vue 3 + Vite UI component showcase and documentation app.  
+It includes themed component demos (light/dark), navigation patterns, and reusable docs sections for consistent component guidance.
 
-## Recommended IDE Setup
+## Tech stack
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Vue 3
+- Vue Router 4
+- Vite
 
-## Recommended Browser Setup
+## Project structure
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+```text
+darksight/
+  src/
+    components/
+      DsTooltip.vue
+      DsSnackbar.vue
+      DocsSection.vue
+    composables/
+      useSnackbar.js
+    pages/
+      ButtonsPage.vue
+      BreadcrumbPage.vue
+      CardPage.vue
+      DocumentationPage.vue
+      GettingStartedPage.vue
+      HomePage.vue
+      InputsPage.vue
+      PaginationPage.vue
+      RadioButtonsPage.vue
+      SearchInputPage.vue
+      SnackbarPage.vue
+      StepperPage.vue
+      TabsPage.vue
+      ThemesPage.vue
+      TooltipPage.vue
+    router/
+      index.js
+    App.vue
+    main.js
+  styles.css
+  index.html
+```
 
-## Customize configuration
+## Getting started
 
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
+### Install dependencies
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Run dev server
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+### Build for production
 
 ```sh
 npm run build
 ```
+
+## Routing and metadata
+
+Routes are lazy-loaded and include metadata for:
+
+- breadcrumb label/icon
+- page title
+- page description
+- category grouping
+
+`router.afterEach` updates `document.title` automatically.
+
+## Key UI components
+
+### `DsTooltip`
+
+- Hover/focus trigger behavior
+- Keyboard escape support
+- Accessible tooltip semantics (`role="tooltip"`, `aria-describedby`)
+
+### `DsSnackbar`
+
+- Variant styles: info/success/error/warning
+- Live region semantics (assertive for errors)
+- Optional action and dismiss controls
+
+### `useSnackbar` composable
+
+- Queue-based snackbar flow
+- Dedupe logic for repeated messages
+- Action callback support per queued item
+- Auto-dismiss with configurable duration
+
+## Theming and styling
+
+Global styles use tokenized variables in `styles.css`, including semantic aliases:
+
+- `--surface`, `--surface-elevated`, `--surface-card`
+- `--text-primary`, `--text-secondary`
+- `--border-color`, `--border-subtle`
+- `--accent-color`
+
+Utility classes added:
+
+- `.u-visually-hidden`
+- `.u-card`
+- `.u-section-stack`
+
+## Documentation patterns
+
+`DocsSection.vue` provides a reusable docs block with:
+
+- title/description
+- preview slot
+- optional API list
+- accessibility notes
+
+It is integrated in key pages including:
+
+- `TooltipPage.vue`
+- `SnackbarPage.vue`
+
+## Recommended IDE setup
+
+- VS Code
+- Vue - Official (Volar)
+
+## Notes
+
+This project is intended as a practical component library reference and demo workspace.  
+Use it as a base for design system experimentation, component API documentation, and accessibility iteration.

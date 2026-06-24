@@ -1,5 +1,19 @@
 <script setup>
 import DsTooltip from "../components/DsTooltip.vue";
+import DocsSection from "../components/DocsSection.vue";
+
+const tooltipApiItems = [
+  { name: "text", description: "Tooltip content text." },
+  { name: "placement", description: "Position: top, right, bottom, left." },
+  { name: "disabled", description: "Disable tooltip interactions." },
+  { name: "forceVisible", description: "Force tooltip to show regardless of hover/focus." },
+];
+
+const tooltipNotes = [
+  "Tooltips appear on hover and keyboard focus.",
+  "Escape key dismisses visible tooltip state.",
+  "Use concise helper text, not critical instructions."
+];
 </script>
 
 <template>
@@ -13,28 +27,32 @@ import DsTooltip from "../components/DsTooltip.vue";
       </p>
     </header>
 
-    <article class="demo-card">
-      <h2>Basic usage</h2>
-      <p>Hover or focus the examples to preview different placements.</p>
+    <DocsSection
+      title="Basic usage"
+      description="Hover or focus the examples to preview different placements."
+      :api-items="tooltipApiItems"
+      :notes="tooltipNotes"
+    >
+      <template #preview>
+        <div class="examples-grid">
+          <DsTooltip text="Add to favorites" placement="top">
+            <button class="demo-btn" type="button">Top</button>
+          </DsTooltip>
 
-      <div class="examples-grid">
-        <DsTooltip text="Add to favorites" placement="top">
-          <button class="demo-btn" type="button">Top</button>
-        </DsTooltip>
+          <DsTooltip text="Open details panel" placement="right">
+            <button class="demo-btn" type="button">Right</button>
+          </DsTooltip>
 
-        <DsTooltip text="Open details panel" placement="right">
-          <button class="demo-btn" type="button">Right</button>
-        </DsTooltip>
+          <DsTooltip text="Download report" placement="bottom">
+            <button class="demo-btn" type="button">Bottom</button>
+          </DsTooltip>
 
-        <DsTooltip text="Download report" placement="bottom">
-          <button class="demo-btn" type="button">Bottom</button>
-        </DsTooltip>
-
-        <DsTooltip text="Remove item" placement="left">
-          <button class="demo-btn" type="button">Left</button>
-        </DsTooltip>
-      </div>
-    </article>
+          <DsTooltip text="Remove item" placement="left">
+            <button class="demo-btn" type="button">Left</button>
+          </DsTooltip>
+        </div>
+      </template>
+    </DocsSection>
 
     <article class="demo-card">
       <h2>Guidance</h2>
@@ -75,10 +93,11 @@ import DsTooltip from "../components/DsTooltip.vue";
 .hero p {
   margin: 0;
   max-width: 65ch;
-  color: var(--text-secondary);
+  color: var(--text-primary);
 }
 
 .demo-card {
+  background: var(--surface-card, #ffffff);
   border: 1px solid var(--border-color);
   border-radius: 14px;
   background: var(--surface);
@@ -95,7 +114,7 @@ import DsTooltip from "../components/DsTooltip.vue";
 .demo-card p,
 .demo-card ul {
   margin: 0;
-  color: var(--text-secondary);
+  color: var(--text-primary);
 }
 
 .demo-card ul {
@@ -129,6 +148,36 @@ import DsTooltip from "../components/DsTooltip.vue";
   border-color: color-mix(in srgb, var(--accent-color, #7c4dff) 60%, var(--border-color) 40%);
   box-shadow: 0 8px 20px rgba(124, 77, 255, 0.16);
   transform: translateY(-1px);
+}
+
+:root[data-theme="dark"] .tooltip-page .demo-card {
+  background: var(--dark-surface-2);
+  border-color: var(--dark-border);
+}
+
+:root[data-theme="dark"] .tooltip-page .demo-card h2 {
+  color: var(--dark-text-primary);
+}
+
+:root[data-theme="dark"] .tooltip-page p {
+  color: var(--dark-text-primary);
+}
+
+:root[data-theme="dark"] .tooltip-page .demo-card p,
+:root[data-theme="dark"] .tooltip-page .demo-card ul {
+  color: var(--dark-text-primary);
+}
+
+:root[data-theme="dark"] .tooltip-page .demo-btn {
+  background: var(--dark-surface-3);
+  border-color: var(--dark-border);
+  color: var(--dark-text-primary);
+}
+
+:root[data-theme="dark"] .tooltip-page .demo-btn:hover,
+:root[data-theme="dark"] .tooltip-page .demo-btn:focus-visible {
+  border-color: var(--dark-primary);
+  box-shadow: 0 8px 20px rgba(139, 123, 255, 0.22);
 }
 
 @media (max-width: 600px) {

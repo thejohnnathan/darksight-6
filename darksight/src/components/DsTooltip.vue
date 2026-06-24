@@ -23,6 +23,7 @@ const props = defineProps({
 
 const isVisible = ref(false);
 const tooltipId = `ds-tooltip-${Math.random().toString(36).slice(2, 9)}`;
+const triggerRef = ref(null);
 
 const showTooltip = () => {
   if (props.disabled) return;
@@ -31,6 +32,13 @@ const showTooltip = () => {
 
 const hideTooltip = () => {
   isVisible.value = false;
+};
+
+const onTriggerKeydown = (event) => {
+  if (event.key === "Escape") {
+    hideTooltip();
+    triggerRef.value?.blur?.();
+  }
 };
 
 const tooltipClasses = computed(() => ["ds-tooltip-bubble", `is-${props.placement}`]);
@@ -45,7 +53,15 @@ const shouldShow = computed(() => (props.disabled ? false : props.forceVisible |
     @focusin="showTooltip"
     @focusout="hideTooltip"
   >
-    <span class="ds-tooltip-trigger" :aria-describedby="shouldShow ? tooltipId : undefined">
+    <span
+      ref="triggerRef"
+      class="ds-tooltip-trigger"
+      tabindex="0"
+      :aria-describedby="shouldShow ? tooltipId : undefined"
+      :aria-expanded="shouldShow ? 'true' : 'false'"
+      :aria-haspopup="'true'"
+      @keydown="onTriggerKeydown"
+    >
       <slot />
     </span>
     <transition name="ds-tooltip-fade">
