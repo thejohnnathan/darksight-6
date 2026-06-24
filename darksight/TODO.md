@@ -1,5 +1,3 @@
-- [x] Create new splash home page component at `src/pages/HomePage.vue`.
-- [x] Update router to render HomePage on `/` instead of redirecting.
-- [x] Update breadcrumb rendering in `src/App.vue` for home route behavior.
-- [x] Add professional splash page styles (including dark mode) in `styles.css`.
-- [ ] Run `npm run build` to verify everything compiles.
+- [x] Align `.nav-panel-header` icon vertically with nav icons when sidebar is collapsed
+- [x] Ensure small-screen navigation panel header icon alignment matches icon-only nav links
+- [x] Update task checklist completion after CSS edits

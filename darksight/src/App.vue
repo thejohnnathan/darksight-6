@@ -541,6 +541,24 @@ onBeforeUnmount(() => {
 
 .navigation-panel.collapsed .nav-panel-header {
   justify-content: center;
+  flex-direction: column;
+  gap: 0;
+}
+
+.navigation-panel.collapsed .nav-panel-brand {
+  width: 36px;
+  height: 36px;
+  justify-content: center;
+  padding-left: 0;
+}
+
+.navigation-panel.collapsed .nav-panel-brand::before {
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.navigation-panel.collapsed .nav-panel-brand svg {
+  margin-left: 0;
 }
 
 .navigation-panel.collapsed .nav-panel-brand-name {

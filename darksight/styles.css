@@ -70,6 +70,15 @@ body {
     color: #111;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
 }
 
 .material-symbols-outlined {
@@ -150,6 +159,7 @@ main section:last-child {
     height: 24px;
     color: #5f46ff;
     flex-shrink: 0;
+    margin-left: 0.3em !important;
 }
 
 .brand-name {
@@ -1211,6 +1221,14 @@ button.btn-small {
     overflow-y: auto;
     overflow-x: hidden;
     position: relative;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.navigation-panel nav::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
 }
 
 .nav-collapse-btn {
@@ -1476,6 +1494,30 @@ button.btn-small {
 @media (max-width: 768px) {
     main {
         margin-top: 0;
+    }
+
+    .nav-panel-header {
+        justify-content: center;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav-panel-brand {
+        width: 36px;
+        height: 36px;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        max-width: 30px;
+    }
+
+    .nav-panel-brand::before {
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .nav-panel-brand svg {
+        margin-left: 0 !important;
     }
 
     .nav-panel-brand-name {
