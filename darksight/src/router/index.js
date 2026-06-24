@@ -8,6 +8,7 @@ import SearchInputPage from '../pages/SearchInputPage.vue'
 import SnackbarPage from '../pages/SnackbarPage.vue'
 import StepperPage from '../pages/StepperPage.vue'
 import TabsPage from '../pages/TabsPage.vue'
+import BreadcrumbPage from '../pages/BreadcrumbPage.vue'
 import DocumentationPage from '../pages/DocumentationPage.vue'
 import GettingStartedPage from '../pages/GettingStartedPage.vue'
 import ThemesPage from '../pages/ThemesPage.vue'
@@ -23,6 +24,7 @@ const routes = [
   { path: '/snackbar', name: 'snackbar', component: SnackbarPage },
   { path: '/stepper', name: 'stepper', component: StepperPage },
   { path: '/tabs', name: 'tabs', component: TabsPage },
+  { path: '/breadcrumb', name: 'breadcrumb', component: BreadcrumbPage },
   { path: '/documentation', name: 'documentation', component: DocumentationPage },
   { path: '/getting-started', name: 'getting-started', component: GettingStartedPage },
   { path: '/themes', name: 'themes', component: ThemesPage }

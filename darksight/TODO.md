@@ -1,5 +1,4 @@
-- [x] Create router configuration with routes for all navigation links
-- [x] Create page components with appropriate h2 headers
-- [x] Update main.js to use Vue Router
-- [x] Refactor App.vue navigation links to RouterLink and render RouterView
-- [x] Mark completed items after implementation
+- [x] Add navigation panel brand block to the left of collapse button in `src/App.vue`
+- [x] Make brand text conditional so only owl icon shows when collapsed
+- [x] Add scoped styles for navigation panel brand alignment/spacing
+- [x] Mark tasks complete after implementation
