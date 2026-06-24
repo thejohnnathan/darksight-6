@@ -1,4 +1,5 @@
-- [x] Add navigation panel brand block to the left of collapse button in `src/App.vue`
-- [x] Make brand text conditional so only owl icon shows when collapsed
-- [x] Add scoped styles for navigation panel brand alignment/spacing
-- [x] Mark tasks complete after implementation
+- [x] Create new splash home page component at `src/pages/HomePage.vue`.
+- [x] Update router to render HomePage on `/` instead of redirecting.
+- [x] Update breadcrumb rendering in `src/App.vue` for home route behavior.
+- [x] Add professional splash page styles (including dark mode) in `styles.css`.
+- [ ] Run `npm run build` to verify everything compiles.

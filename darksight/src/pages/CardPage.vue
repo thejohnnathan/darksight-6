@@ -2,6 +2,10 @@
   <section>
     <div class="header-subtitle">UI Component Library</div>
     <h2 class="header-title">Card</h2>
+    <p>
+      Cards group related information and actions into flexible containers that improve scanability.
+      Use them to present content blocks with clear hierarchy, spacing, and optional actions.
+    </p>
 
     <section class="profile-card-section">
       <article class="profile-card">

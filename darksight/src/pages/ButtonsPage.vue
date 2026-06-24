@@ -2,6 +2,10 @@
     <section>
         <div class="header-subtitle">UI Component Library</div>
         <h1 class="header-title">Buttons</h1>
+        <p>
+            Buttons trigger user actions and represent the primary, secondary, and contextual commands in an interface.
+            Use clear labels, consistent hierarchy, and appropriate states to guide interaction.
+        </p>
         <div class="flex">
             <div class="flex-item">
                 <button>Submit<svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960"

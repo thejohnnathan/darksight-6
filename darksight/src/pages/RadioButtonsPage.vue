@@ -2,6 +2,10 @@
   <section class="radio-page">
     <div class="header-subtitle">UI Component Library</div>
     <h2 class="header-title">Radio Buttons</h2>
+    <p>
+      Radio buttons let users choose a single option from a defined set of mutually exclusive choices.
+      Present options clearly and ensure selection states remain obvious and accessible.
+    </p>
 
     <div class="radio-demo-grid">
       <div class="radio-column">

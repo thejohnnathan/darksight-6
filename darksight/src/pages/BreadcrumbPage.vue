@@ -2,6 +2,10 @@
   <section class="breadcrumb-page">
     <div class="header-subtitle">UI Component Library</div>
     <h2 class="header-title">Breadcrumb</h2>
+    <p>
+      Breadcrumbs show a clear path through hierarchy and help users navigate back to previous levels.
+      Keep labels concise and reflect the current location with a distinct active state.
+    </p>
 
     <div class="breadcrumb-demo-stack">
       <article class="breadcrumb-example">

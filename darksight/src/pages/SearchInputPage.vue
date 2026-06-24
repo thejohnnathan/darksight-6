@@ -2,6 +2,10 @@
   <section class="search-page">
     <div class="header-subtitle">UI Component Library</div>
     <h2 class="header-title">Search Input</h2>
+    <p>
+      Search inputs help users quickly locate content, commands, or records across large interfaces.
+      Pair clear placeholders and affordances with responsive feedback to improve discovery.
+    </p>
 
     <div class="search-demo">
       <div class="search-row">

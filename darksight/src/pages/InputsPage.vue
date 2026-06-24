@@ -2,6 +2,10 @@
   <section class="inputs-page">
     <div class="header-subtitle">UI Component Library</div>
     <h2 class="header-title">Inputs</h2>
+    <p>
+      Input fields capture user data in forms and workflows, with clear labels and supportive feedback.
+      Design input states carefully to communicate focus, errors, and disabled behavior.
+    </p>
 
     <h4 class="heading-with-line">Text Input Variants</h4>
     <div class="inputs-demo">

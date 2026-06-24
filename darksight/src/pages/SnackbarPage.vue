@@ -2,6 +2,10 @@
   <section class="snackbar-page">
     <div class="header-subtitle">UI Component Library</div>
     <h2 class="header-title">Snackbar</h2>
+    <p>
+      Snackbars provide brief, non-blocking feedback after user actions such as saves, errors, or status updates.
+      Keep messages short, informative, and paired with optional actions when appropriate.
+    </p>
 
     <div class="snackbar-showcase">
       <article

@@ -2,6 +2,10 @@
   <section>
     <div class="header-subtitle">UI Component Library</div>
     <h2 class="header-title">Pagination</h2>
+    <p>
+      Pagination breaks large datasets into manageable pages so users can browse content efficiently.
+      Provide clear page controls, item counts, and current-position feedback for better navigation.
+    </p>
 
     <div class="pagination-demo-stack">
       <article class="pagination-card">

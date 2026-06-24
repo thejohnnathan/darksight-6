@@ -2,6 +2,10 @@
   <section class="tabs-page">
     <div class="header-subtitle">UI Component Library</div>
     <h2 class="header-title">Tabs</h2>
+    <p>
+      Tabs organize related content into separate views without leaving the current context.
+      Use clear labels and active states so users can switch sections confidently.
+    </p>
 
     <div class="tabs-demo-stack">
       <article class="tabs-example">
