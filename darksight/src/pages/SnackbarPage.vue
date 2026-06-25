@@ -31,7 +31,7 @@
             </div>
           </article>
         </div>
-
+        <div class="spacer">
         <DsSnackbar
           v-if="snackbar.current.value"
           :type="snackbar.current.value.type"
@@ -41,7 +41,7 @@
           :visible="snackbar.visible.value"
           @action="snackbar.handleAction"
           @close="snackbar.closeCurrent"
-        />
+        /></div>
       </template>
     </DocsSection>
   </section>
@@ -166,6 +166,10 @@ onMounted(() => {
   margin: 0;
   flex: 1;
   color: var(--text-primary);
+}
+
+.spacer {
+  margin-top: 16px;
 }
 
 :root[data-theme="dark"] .snackbar-page .snackbar-example-row {

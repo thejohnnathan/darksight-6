@@ -35,10 +35,30 @@
               </svg>
               Dashboard
             </button>
-            <button class="tabs-item" type="button">Projects</button>
-            <button class="tabs-item" type="button">Messages</button>
-            <button class="tabs-item" type="button">Files</button>
-            <button class="tabs-item" type="button">Team</button>
+            <button class="tabs-item tabs-item--icon" type="button">
+              <svg viewBox="0 -960 960 960" aria-hidden="true">
+                <path d="M140-160v-520h200v520H140Zm240 0v-640h200v640H380Zm240 0v-400h200v400H620Z"/>
+              </svg>
+              Projects
+            </button>
+            <button class="tabs-item tabs-item--icon" type="button">
+              <svg viewBox="0 -960 960 960" aria-hidden="true">
+                <path d="M80-160v-640h800v640H80Zm80-80h640v-400H160v400Zm320-80 200-140-200-140-200 140 200 140Zm0-240Z"/>
+              </svg>
+              Messages
+            </button>
+            <button class="tabs-item tabs-item--icon" type="button">
+              <svg viewBox="0 -960 960 960" aria-hidden="true">
+                <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h240l80 80h240q33 0 56.5 23.5T840-680v480q0 33-23.5 56.5T760-120H200Zm0-80h560v-480H487l-80-80H200v560Zm0 0v-560 560Z"/>
+              </svg>
+              Files
+            </button>
+            <button class="tabs-item tabs-item--icon" type="button">
+              <svg viewBox="0 -960 960 960" aria-hidden="true">
+                <path d="M160-240q-17 0-28.5-11.5T120-280q0-83 83.5-141.5T400-480q113 0 196.5 58.5T680-280q0 17-11.5 28.5T640-240H160Zm240-320q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm320 320v-40q0-45-17.5-85.5T653-436q57 8 92 43.5t35 92.5v60h-60Zm-80-320q0-50-17.5-92.5T573-724q37 4 62 31t25 63q0 36-25 63t-62 31q32-29 49.5-71.5T640-560Z"/>
+              </svg>
+              Team
+            </button>
           </nav>
         </div>
       </article>
