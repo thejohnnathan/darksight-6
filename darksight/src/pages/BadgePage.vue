@@ -1,22 +1,5 @@
 <script setup>
 import DsBadge from "../components/DsBadge.vue";
-import DocsSection from "../components/DocsSection.vue";
-
-const badgeApiItems = [
-  { name: "value", description: "Badge content (number or string)." },
-  { name: "max", description: "Maximum value to show before using '+' (default: 99)." },
-  { name: "size", description: "Badge size: small, medium, or large." },
-  { name: "color", description: "Badge color: primary, secondary, error, warning, success, or info." },
-  { name: "position", description: "Position: top-end, top-start, bottom-end, or bottom-start." },
-  { name: "dot", description: "Show as a small notification dot only." },
-  { name: "overlap", description: "Enable overlap mode for avatar/icon badges." },
-];
-
-const badgeNotes = [
-  "Use badges to display notification counts or status indicators.",
-  "Position badges at corner points of their container element.",
-  "The dot variant is useful for online/offline status indicators.",
-];
 </script>
 
 <template>
@@ -30,171 +13,170 @@ const badgeNotes = [
       </p>
     </header>
 
-    <DocsSection
-      title="Badge positions"
-      description="Position badges at different corner points of their container."
-      :api-items="badgeApiItems"
-      :notes="badgeNotes"
-    >
-      <template #preview>
-        <div class="badge-positions-grid">
-          <div class="badge-position-item">
-            <button class="demo-btn" type="button">
-              Top End
-              <DsBadge value="3" position="top-end" />
-            </button>
-          </div>
-          <div class="badge-position-item">
-            <button class="demo-btn" type="button">
-              Top Start
-              <DsBadge value="12" position="top-start" />
-            </button>
-          </div>
-          <div class="badge-position-item">
-            <button class="demo-btn" type="button">
-              Bottom End
-              <DsBadge value="99+" position="bottom-end" />
-            </button>
-          </div>
-          <div class="badge-position-item">
-            <button class="demo-btn" type="button">
-              Bottom Start
-              <DsBadge value="New" position="bottom-start" />
-            </button>
-          </div>
+    <section class="demo-card">
+      <h3>Badge positions</h3>
+      <p class="section-description">Position badges at different corner points of their container.</p>
+      <div class="badge-positions-grid">
+        <div class="badge-position-item">
+          <button class="demo-btn" type="button">
+            Top End
+            <DsBadge value="3" position="top-end" />
+          </button>
         </div>
-      </template>
-    </DocsSection>
+        <div class="badge-position-item">
+          <button class="demo-btn" type="button">
+            Top Start
+            <DsBadge value="12" position="top-start" />
+          </button>
+        </div>
+        <div class="badge-position-item">
+          <button class="demo-btn" type="button">
+            Bottom End
+            <DsBadge value="99+" position="bottom-end" />
+          </button>
+        </div>
+        <div class="badge-position-item">
+          <button class="demo-btn" type="button">
+            Bottom Start
+            <DsBadge value="New" position="bottom-start" />
+          </button>
+        </div>
+      </div>
+      <h4>API</h4>
+      <ul>
+        <li><code>value</code> - Badge content (number or string).</li>
+        <li><code>max</code> - Maximum value to show before using '+' (default: 99).</li>
+        <li><code>size</code> - Badge size: small, medium, or large.</li>
+        <li><code>color</code> - Badge color: primary, secondary, error, warning, success, or info.</li>
+        <li><code>position</code> - Position: top-end, top-start, bottom-end, or bottom-start.</li>
+        <li><code>dot</code> - Show as a small notification dot only.</li>
+        <li><code>overlap</code> - Enable overlap mode for avatar/icon badges.</li>
+      </ul>
+      <h4>Accessibility notes</h4>
+      <ul>
+        <li>Use badges to display notification counts or status indicators.</li>
+        <li>Position badges at corner points of their container element.</li>
+        <li>The dot variant is useful for online/offline status indicators.</li>
+      </ul>
+    </section>
 
-    <DocsSection
-      title="Badge sizes"
-      description="Choose the right size for your use case."
-    >
-      <template #preview>
-        <div class="badge-sizes-grid">
-          <div class="badge-size-item">
-            <button class="demo-btn-small" type="button">
-              Small
-              <DsBadge value="5" size="small" />
-            </button>
-          </div>
-          <div class="badge-size-item">
-            <button class="demo-btn" type="button">
-              Medium
-              <DsBadge value="5" size="medium" />
-            </button>
-          </div>
-          <div class="badge-size-item">
-            <button class="demo-btn-large" type="button">
-              Large
-              <DsBadge value="5" size="large" />
-            </button>
-          </div>
+    <section class="demo-card">
+      <h3>Badge sizes</h3>
+      <p class="section-description">Choose the right size for your use case.</p>
+      <div class="badge-sizes-grid">
+        <div class="badge-size-item">
+          <button class="demo-btn-small" type="button">
+            Small
+            <DsBadge value="5" size="small" />
+          </button>
         </div>
-      </template>
-    </DocsSection>
+        <div class="badge-size-item">
+          <button class="demo-btn" type="button">
+            Medium
+            <DsBadge value="5" size="medium" />
+          </button>
+        </div>
+        <div class="badge-size-item">
+          <button class="demo-btn-large" type="button">
+            Large
+            <DsBadge value="5" size="large" />
+          </button>
+        </div>
+      </div>
+    </section>
 
-    <DocsSection
-      title="Badge colors"
-      description="Use different colors to convey meaning."
-    >
-      <template #preview>
-        <div class="badge-colors-grid">
-          <div class="badge-color-item">
-            <button class="demo-btn" type="button">
-              Primary
-              <DsBadge value="8" color="primary" />
-            </button>
-          </div>
-          <div class="badge-color-item">
-            <button class="demo-btn" type="button">
-              Secondary
-              <DsBadge value="8" color="secondary" />
-            </button>
-          </div>
-          <div class="badge-color-item">
-            <button class="demo-btn" type="button">
-              Success
-              <DsBadge value="8" color="success" />
-            </button>
-          </div>
-          <div class="badge-color-item">
-            <button class="demo-btn" type="button">
-              Warning
-              <DsBadge value="8" color="warning" />
-            </button>
-          </div>
-          <div class="badge-color-item">
-            <button class="demo-btn" type="button">
-              Error
-              <DsBadge value="8" color="error" />
-            </button>
-          </div>
-          <div class="badge-color-item">
-            <button class="demo-btn" type="button">
-              Info
-              <DsBadge value="8" color="info" />
-            </button>
-          </div>
+    <section class="demo-card">
+      <h3>Badge colors</h3>
+      <p class="section-description">Use different colors to convey meaning.</p>
+      <div class="badge-colors-grid">
+        <div class="badge-color-item">
+          <button class="demo-btn" type="button">
+            Primary
+            <DsBadge value="8" color="primary" />
+          </button>
         </div>
-      </template>
-    </DocsSection>
+        <div class="badge-color-item">
+          <button class="demo-btn" type="button">
+            Secondary
+            <DsBadge value="8" color="secondary" />
+          </button>
+        </div>
+        <div class="badge-color-item">
+          <button class="demo-btn" type="button">
+            Success
+            <DsBadge value="8" color="success" />
+          </button>
+        </div>
+        <div class="badge-color-item">
+          <button class="demo-btn" type="button">
+            Warning
+            <DsBadge value="8" color="warning" />
+          </button>
+        </div>
+        <div class="badge-color-item">
+          <button class="demo-btn" type="button">
+            Error
+            <DsBadge value="8" color="error" />
+          </button>
+        </div>
+        <div class="badge-color-item">
+          <button class="demo-btn" type="button">
+            Info
+            <DsBadge value="8" color="info" />
+          </button>
+        </div>
+      </div>
+    </section>
 
-    <DocsSection
-      title="Notification dot"
-      description="Use the dot variant for status indicators."
-    >
-      <template #preview>
-        <div class="badge-dots-grid">
-          <div class="badge-dot-item">
-            <span class="avatar-badge-wrap">
-              <span class="demo-avatar">JD</span>
-              <DsBadge dot size="small" position="top-end" color="success" />
-            </span>
-          </div>
-          <div class="badge-dot-item">
-            <span class="avatar-badge-wrap">
-              <span class="demo-avatar">AB</span>
-              <DsBadge dot size="medium" position="top-end" color="error" />
-            </span>
-          </div>
-          <div class="badge-dot-item">
-            <span class="avatar-badge-wrap large">
-              <span class="demo-avatar large">MK</span>
-              <DsBadge dot size="large" position="top-end" color="warning" />
-            </span>
-          </div>
+    <section class="demo-card">
+      <h3>Notification dot</h3>
+      <p class="section-description">Use the dot variant for status indicators.</p>
+      <div class="badge-dots-grid">
+        <div class="badge-dot-item">
+          <span class="avatar-badge-wrap">
+            <span class="demo-avatar">JD</span>
+            <DsBadge dot size="small" position="top-end" color="success" />
+          </span>
         </div>
-      </template>
-    </DocsSection>
+        <div class="badge-dot-item">
+          <span class="avatar-badge-wrap">
+            <span class="demo-avatar">AB</span>
+            <DsBadge dot size="medium" position="top-end" color="error" />
+          </span>
+        </div>
+        <div class="badge-dot-item">
+          <span class="avatar-badge-wrap large">
+            <span class="demo-avatar large">MK</span>
+            <DsBadge dot size="large" position="top-end" color="warning" />
+          </span>
+        </div>
+      </div>
+    </section>
 
-    <DocsSection
-      title="With avatars"
-      description="Use overlap mode with avatar images."
-    >
-      <template #preview>
-        <div class="badge-avatars-grid">
-          <div class="badge-avatar-item">
-            <span class="avatar-badge-wrap">
-              <span class="demo-avatar">A</span>
-              <DsBadge value="2" overlap position="top-end" color="primary" />
-            </span>
-          </div>
-          <div class="badge-avatar-item">
-            <span class="avatar-badge-wrap">
-              <span class="demo-avatar">B</span>
-              <DsBadge value="12" overlap position="top-end" color="error" />
-            </span>
-          </div>
-          <div class="badge-avatar-item">
-            <span class="avatar-badge-wrap">
-              <span class="demo-avatar primary">C</span>
-              <DsBadge value="99+" overlap position="top-end" color="success" />
-            </span>
-          </div>
+    <section class="demo-card">
+      <h3>With avatars</h3>
+      <p class="section-description">Use overlap mode with avatar images.</p>
+      <div class="badge-avatars-grid">
+        <div class="badge-avatar-item">
+          <span class="avatar-badge-wrap">
+            <span class="demo-avatar">A</span>
+            <DsBadge value="2" overlap position="top-end" color="primary" />
+          </span>
         </div>
-      </template>
-    </DocsSection>
+        <div class="badge-avatar-item">
+          <span class="avatar-badge-wrap">
+            <span class="demo-avatar">B</span>
+            <DsBadge value="12" overlap position="top-end" color="error" />
+          </span>
+        </div>
+        <div class="badge-avatar-item">
+          <span class="avatar-badge-wrap">
+            <span class="demo-avatar primary">C</span>
+            <DsBadge value="99+" overlap position="top-end" color="success" />
+          </span>
+        </div>
+      </div>
+    </section>
 
     <article class="demo-card">
       <h2>Guidance</h2>

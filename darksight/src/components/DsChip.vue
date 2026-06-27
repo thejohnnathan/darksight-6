@@ -53,16 +53,11 @@ const handleRemove = (event) => {
 
 const getIconPath = (iconName) => {
   const icons = {
-    "close":
-      "M293.6 246.6L246.6 293.6l84.4-84.4-84.4-84.4 47-47 84.4 84.4L293.6 246.6zM589.4 246.6l-47-47-84.4 84.4 84.4 84.4 47-47-84.4-84.4z",
-    "add":
-      "M469.2 346.2h-72v-72h-41.4v72h-72v41.4h72v72h41.4v-72h72v-41.4z",
-    "calendar":
-      "M319.6 445.4h320.8v-41.4H319.6v41.4zm-102-204.8h41.4v-102h-41.4v102zm102 0h41.4v-102h-41.4v102zm102 0h41.4v-102h-41.4v102zm-204 102h41.4v-102h-41.4v102zm102 0h41.4v-102h-41.4v102zm102 0h41.4v-102h-41.4v102zm-306 102h41.4v-102h-41.4v102zm102 0h41.4v-102h-41.4v102zm102 0h41.4v-102h-41.4v102zM248.4 628.2c-25.4 0-46.6-8.2-64-24.6s-26.2-38.6-26.2-64.2V372.6c0-25.6 8.8-46.8 26.2-63.4s38.6-24.8 64-24.8h409.2c25.4 0 46.6 8.2 64 24.6s26.2 38.8 26.2 64.4v166.8c0 25.6-8.8 46.8-26.2 63.4s-38.6 24.8-64 24.8H248.4z",
-    "checkmark":
-      "M381.6 498.8l-118-118L212 432.4l169.6 169.6 296-296-51.2-51.2-243.8 245.2z",
-    "star":
-      "M476.8 665.2l-45.2-263.4 186.2-135.8-204.6-149.6-186.2 135.8-45.2 263.4 118.2 59.6z",
+    close: "M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z",
+    add: "M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6z",
+    calendar: "M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2m0 15H5V10h14z",
+    checkmark: "M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z",
+    star: "m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z",
   };
   return icons[iconName] || "";
 };
@@ -77,26 +72,14 @@ const getIconPath = (iconName) => {
     @click="handleClick"
   >
     <span v-if="icon" class="ds-chip__leading-icon">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        height="18px"
-        viewBox="0 -960 960 960"
-        width="18px"
-        fill="currentColor"
-      >
+      <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 0 24 24" width="18px" fill="currentColor">
         <path :d="getIconPath(icon)" />
       </svg>
     </span>
     <span class="ds-chip__label">{{ label }}</span>
     <span v-if="removable" class="ds-chip__trailing-icon" @click="handleRemove">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        height="18px"
-        viewBox="0 -960 960 960"
-        width="18px"
-        fill="currentColor"
-      >
-        <path d="M293.6 246.6L246.6 293.6l84.4-84.4-84.4-84.4 47-47 84.4 84.4L293.6 246.6zM589.4 246.6l-47-47-84.4 84.4 84.4 84.4 47-47-84.4-84.4z" />
+      <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 0 24 24" width="18px" fill="currentColor">
+        <path :d="getIconPath('close')" />
       </svg>
     </span>
   </button>
@@ -109,27 +92,15 @@ const getIconPath = (iconName) => {
     @click="handleClick"
   >
     <span v-if="selected" class="ds-chip__checkmark">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        height="18px"
-        viewBox="0 -960 960 960"
-        width="18px"
-        fill="currentColor"
-      >
-        <path d="M381.6 498.8l-118-118L212 432.4l169.6 169.6 296-296-51.2-51.2-243.8 245.2z" />
+      <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 0 24 24" width="18px" fill="currentColor">
+        <path :d="getIconPath('checkmark')" />
       </svg>
     </span>
     <span v-else class="ds-chip__checkbox" />
     <span class="ds-chip__label">{{ label }}</span>
     <span v-if="removable" class="ds-chip__trailing-icon" @click="handleRemove">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        height="18px"
-        viewBox="0 -960 960 960"
-        width="18px"
-        fill="currentColor"
-      >
-        <path d="M293.6 246.6L246.6 293.6l84.4-84.4-84.4-84.4 47-47 84.4 84.4L293.6 246.6zM589.4 246.6l-47-47-84.4 84.4 84.4 84.4 47-47-84.4-84.4z" />
+      <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 0 24 24" width="18px" fill="currentColor">
+        <path :d="getIconPath('close')" />
       </svg>
     </span>
   </button>
@@ -142,26 +113,14 @@ const getIconPath = (iconName) => {
     @click="handleClick"
   >
     <span v-if="selected" class="ds-chip__checkmark">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        height="18px"
-        viewBox="0 -960 960 960"
-        width="18px"
-        fill="currentColor"
-      >
-        <path d="M381.6 498.8l-118-118L212 432.4l169.6 169.6 296-296-51.2-51.2-243.8 245.2z" />
+      <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 0 24 24" width="18px" fill="currentColor">
+        <path :d="getIconPath('checkmark')" />
       </svg>
     </span>
     <span class="ds-chip__label">{{ label }}</span>
     <span v-if="removable" class="ds-chip__trailing-icon" @click="handleRemove">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        height="18px"
-        viewBox="0 -960 960 960"
-        width="18px"
-        fill="currentColor"
-      >
-        <path d="M293.6 246.6L246.6 293.6l84.4-84.4-84.4-84.4 47-47 84.4 84.4L293.6 246.6zM589.4 246.6l-47-47-84.4 84.4 84.4 84.4 47-47-84.4-84.4z" />
+      <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 0 24 24" width="18px" fill="currentColor">
+        <path :d="getIconPath('close')" />
       </svg>
     </span>
   </button>
@@ -285,18 +244,36 @@ const getIconPath = (iconName) => {
 }
 
 .ds-chip__trailing-icon {
-  margin-left: -0.125rem;
-  margin-right: -0.25rem;
-  opacity: 0.7;
-  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0.125rem;
+  margin-right: -0.125rem;
+  padding: 0.125rem;
+  opacity: 0.72;
+  border-radius: 999px;
+  transition: opacity 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
+}
+
+.ds-chip__trailing-icon svg {
+  width: 14px;
+  height: 14px;
 }
 
 .ds-chip__trailing-icon:hover:not(:disabled) {
   opacity: 1;
-  background: color-mix(in srgb, currentColor 12%, transparent);
+  background: color-mix(in srgb, currentColor 14%, transparent);
+  transform: scale(1.04);
 }
 
 /* Dark theme */
+:root[data-theme="dark"] .ds-chip {
+  color: var(--dark-text-primary);
+}
+
+:root[data-theme="dark"] .ds-chip:focus-visible {
+  box-shadow: 0 0 0 2px var(--dark-surface-1), 0 0 0 4px var(--dark-primary);
+}
+
 :root[data-theme="dark"] .ds-chip--assist {
   background: var(--dark-surface-3);
   border-color: var(--dark-border);
@@ -304,18 +281,28 @@ const getIconPath = (iconName) => {
 }
 
 :root[data-theme="dark"] .ds-chip--assist:hover:not(:disabled) {
-  background: color-mix(in srgb, var(--dark-surface-3) 88%, var(--dark-primary) 12%);
-  border-color: color-mix(in srgb, var(--dark-border) 60%, var(--dark-primary) 40%);
+  background: color-mix(in srgb, var(--dark-surface-3) 82%, var(--dark-primary) 18%);
+  border-color: color-mix(in srgb, var(--dark-border) 50%, var(--dark-primary) 50%);
 }
 
 :root[data-theme="dark"] .ds-chip--filter {
   background: var(--dark-surface-2);
+  border-color: transparent;
   color: var(--dark-text-secondary);
+}
+
+:root[data-theme="dark"] .ds-chip--filter:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--dark-surface-2) 82%, var(--dark-primary) 18%);
 }
 
 :root[data-theme="dark"] .ds-chip--filter.ds-chip--selected {
   background: var(--dark-surface-container-highest);
+  border-color: var(--dark-primary);
   color: var(--dark-text-primary);
+}
+
+:root[data-theme="dark"] .ds-chip--filter.ds-chip--selected:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--dark-surface-container-highest) 82%, var(--dark-primary) 18%);
 }
 
 :root[data-theme="dark"] .ds-chip--input {
@@ -324,8 +311,16 @@ const getIconPath = (iconName) => {
   color: var(--dark-text-primary);
 }
 
+:root[data-theme="dark"] .ds-chip--input:hover:not(:disabled) {
+  background: var(--dark-surface-container-highest);
+}
+
 :root[data-theme="dark"] .ds-chip--input.ds-chip--selected {
   background: var(--dark-surface-container-high);
   border-color: var(--dark-primary);
+}
+
+:root[data-theme="dark"] .ds-chip--disabled {
+  opacity: 0.45;
 }
 </style>

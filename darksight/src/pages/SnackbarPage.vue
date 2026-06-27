@@ -9,48 +9,57 @@
     </p>
     </header>
 
-    <DocsSection
-      title="Snackbar queue demo"
-      description="Enqueue feedback messages and process them one-by-one with dedupe support."
-      :api-items="snackbarApiItems"
-      :notes="snackbarNotes"
-    >
-      <template #preview>
-        <div class="snackbar-showcase">
-          <article
-            v-for="item in snackbarItems"
-            :key="item.id"
-            class="snackbar-example-row"
-          >
-            <div class="snackbar-example-heading">
-              <span class="snackbar-index">{{ item.id }}</span>
-              <h4 class="snackbar-variant-title">{{ item.title }}</h4>
-              <button class="btn btn-small btn-outline" type="button" @click="enqueueVariant(item)">
-                Enqueue
-              </button>
-            </div>
-          </article>
-        </div>
-        <div class="spacer">
-        <DsSnackbar
-          v-if="snackbar.current.value"
-          :type="snackbar.current.value.type"
-          :message="snackbar.current.value.message"
-          :action-label="snackbar.current.value.actionLabel"
-          :dismissible="snackbar.current.value.dismissible"
-          :visible="snackbar.visible.value"
-          @action="snackbar.handleAction"
-          @close="snackbar.closeCurrent"
-        /></div>
-      </template>
-    </DocsSection>
+    <section class="demo-card">
+      <h3>Snackbar queue demo</h3>
+      <p class="section-description">Enqueue feedback messages and process them one-by-one with dedupe support.</p>
+      <div class="snackbar-showcase">
+        <article
+          v-for="item in snackbarItems"
+          :key="item.id"
+          class="snackbar-example-row"
+        >
+          <div class="snackbar-example-heading">
+            <span class="snackbar-index">{{ item.id }}</span>
+            <h4 class="snackbar-variant-title">{{ item.title }}</h4>
+            <button class="btn btn-small btn-outline" type="button" @click="enqueueVariant(item)">
+              Enqueue
+            </button>
+          </div>
+        </article>
+      </div>
+      <div class="spacer">
+      <DsSnackbar
+        v-if="snackbar.current.value"
+        :type="snackbar.current.value.type"
+        :message="snackbar.current.value.message"
+        :action-label="snackbar.current.value.actionLabel"
+        :dismissible="snackbar.current.value.dismissible"
+        :visible="snackbar.visible.value"
+        @action="snackbar.handleAction"
+        @close="snackbar.closeCurrent"
+      /></div>
+
+      <h4>API</h4>
+      <ul>
+        <li><code>type</code> - Visual style: info, success, error, warning.</li>
+        <li><code>message</code> - Short feedback message for the user.</li>
+        <li><code>actionLabel</code> - Optional label for a secondary action.</li>
+        <li><code>dismissible</code> - Adds manual close button when true.</li>
+      </ul>
+
+      <h4>Accessibility notes</h4>
+      <ul>
+        <li>Use polite announcements for non-critical updates.</li>
+        <li>Error snackbars use assertive live region priority.</li>
+        <li>Keep content concise and action labels clear.</li>
+      </ul>
+    </section>
   </section>
 </template>
 
 <script setup>
 import { computed, onMounted } from 'vue'
 import DsSnackbar from '../components/DsSnackbar.vue'
-import DocsSection from '../components/DocsSection.vue'
 import { useSnackbar } from '../composables/useSnackbar'
 
 const snackbarItems = [
@@ -82,18 +91,6 @@ const snackbarItems = [
 
 const snackbar = useSnackbar()
 
-const snackbarApiItems = [
-  { name: 'type', description: 'Visual style: info, success, error, warning.' },
-  { name: 'message', description: 'Short feedback message for the user.' },
-  { name: 'actionLabel', description: 'Optional label for a secondary action.' },
-  { name: 'dismissible', description: 'Adds manual close button when true.' }
-]
-
-const snackbarNotes = [
-  'Use polite announcements for non-critical updates.',
-  'Error snackbars use assertive live region priority.',
-  'Keep content concise and action labels clear.'
-]
 
 const demoVariants = computed(() =>
   snackbarItems.map((item) => ({

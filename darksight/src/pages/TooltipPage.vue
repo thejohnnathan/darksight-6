@@ -1,19 +1,5 @@
 <script setup>
 import DsTooltip from "../components/DsTooltip.vue";
-import DocsSection from "../components/DocsSection.vue";
-
-const tooltipApiItems = [
-  { name: "text", description: "Tooltip content text." },
-  { name: "placement", description: "Position: top, right, bottom, left." },
-  { name: "disabled", description: "Disable tooltip interactions." },
-  { name: "forceVisible", description: "Force tooltip to show regardless of hover/focus." },
-];
-
-const tooltipNotes = [
-  "Tooltips appear on hover and keyboard focus.",
-  "Escape key dismisses visible tooltip state.",
-  "Use concise helper text, not critical instructions."
-];
 </script>
 
 <template>
@@ -27,32 +13,42 @@ const tooltipNotes = [
       </p>
     </header>
 
-    <DocsSection
-      title="Basic usage"
-      description="Hover or focus the examples to preview different placements."
-      :api-items="tooltipApiItems"
-      :notes="tooltipNotes"
-    >
-      <template #preview>
-        <div class="examples-grid">
-          <DsTooltip text="Add to favorites" placement="top">
-            <button class="demo-btn" type="button">Top</button>
-          </DsTooltip>
+    <section class="demo-card">
+      <h3>Basic usage</h3>
+      <p>Hover or focus the examples to preview different placements.</p>
+      <div class="examples-grid">
+        <DsTooltip text="Add to favorites" placement="top">
+          <button class="demo-btn" type="button">Top</button>
+        </DsTooltip>
 
-          <DsTooltip text="Open details panel" placement="right">
-            <button class="demo-btn" type="button">Right</button>
-          </DsTooltip>
+        <DsTooltip text="Open details panel" placement="right">
+          <button class="demo-btn" type="button">Right</button>
+        </DsTooltip>
 
-          <DsTooltip text="Download report" placement="bottom">
-            <button class="demo-btn" type="button">Bottom</button>
-          </DsTooltip>
+        <DsTooltip text="Download report" placement="bottom">
+          <button class="demo-btn" type="button">Bottom</button>
+        </DsTooltip>
 
-          <DsTooltip text="Remove item" placement="left">
-            <button class="demo-btn" type="button">Left</button>
-          </DsTooltip>
-        </div>
-      </template>
-    </DocsSection>
+        <DsTooltip text="Remove item" placement="left">
+          <button class="demo-btn" type="button">Left</button>
+        </DsTooltip>
+      </div>
+
+      <h4>API</h4>
+      <ul>
+        <li><code>text</code> - Tooltip content text.</li>
+        <li><code>placement</code> - Position: top, right, bottom, left.</li>
+        <li><code>disabled</code> - Disable tooltip interactions.</li>
+        <li><code>forceVisible</code> - Force tooltip to show regardless of hover/focus.</li>
+      </ul>
+
+      <h4>Accessibility notes</h4>
+      <ul>
+        <li>Tooltips appear on hover and keyboard focus.</li>
+        <li>Escape key dismisses visible tooltip state.</li>
+        <li>Use concise helper text, not critical instructions.</li>
+      </ul>
+    </section>
 
     <article class="demo-card">
       <h2>Guidance</h2>

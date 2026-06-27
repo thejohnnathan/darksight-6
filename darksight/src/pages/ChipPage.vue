@@ -1,22 +1,6 @@
 <script setup>
 import { ref } from "vue";
 import DsChip from "../components/DsChip.vue";
-import DocsSection from "../components/DocsSection.vue";
-
-const chipApiItems = [
-  { name: "label", description: "Chip text content." },
-  { name: "variant", description: "Type: assist, filter, or input." },
-  { name: "selected", description: "Mark chip as selected/toggled." },
-  { name: "disabled", description: "Disable chip interactions." },
-  { name: "icon", description: "Leading icon name: add, star, calendar." },
-  { name: "removable", description: "Show trailing remove button." },
-];
-
-const chipNotes = [
-  "Assist chips trigger actions like adding items or scheduling.",
-  "Filter chips toggle selection to refine content or lists.",
-  "Input chips represent attributes like entity values.",
-];
 
 const selectedFilterChips = ref(["Entertainment"]);
 const selectedInputChips = ref(["John Doe"]);
@@ -49,118 +33,122 @@ const handleInputChipRemove = (label) => {
       </p>
     </header>
 
-    <DocsSection
-      title="Assist chips"
-      description="Assist chips perform actions and appear in dynamic contexts."
-      :api-items="chipApiItems"
-      :notes="chipNotes"
-    >
-      <template #preview>
+    <section class="demo-card">
+      <h3>Assist chips</h3>
+      <p class="section-description">Assist chips perform actions and appear in dynamic contexts.</p>
+      <div class="chips-row">
+        <DsChip label="Add to calendar" variant="assist" icon="add" />
+        <DsChip label="Starred" variant="assist" icon="star" />
+        <DsChip label="Schedule" variant="assist" icon="calendar" />
+        <DsChip label="Removable" variant="assist" removable />
+      </div>
+      <h4>API</h4>
+      <ul>
+        <li><code>label</code> - Chip text content.</li>
+        <li><code>variant</code> - Type: assist, filter, or input.</li>
+        <li><code>selected</code> - Mark chip as selected/toggled.</li>
+        <li><code>disabled</code> - Disable chip interactions.</li>
+        <li><code>icon</code> - Leading icon name: add, star, calendar.</li>
+        <li><code>removable</code> - Show trailing remove button.</li>
+      </ul>
+      <h4>Accessibility notes</h4>
+      <ul>
+        <li>Assist chips trigger actions like adding items or scheduling.</li>
+        <li>Filter chips toggle selection to refine content or lists.</li>
+        <li>Input chips represent attributes like entity values.</li>
+      </ul>
+    </section>
+
+    <section class="demo-card">
+      <h3>Filter chips</h3>
+      <p class="section-description">Filter chips toggle selection to refine displayed content.</p>
+      <div class="chips-section">
+        <p class="section-label">Select categories:</p>
         <div class="chips-row">
-          <DsChip label="Add to calendar" variant="assist" icon="add" />
-          <DsChip label="Starred" variant="assist" icon="star" />
-          <DsChip label="Schedule" variant="assist" icon="calendar" />
+          <DsChip
+            label="Entertainment"
+            variant="filter"
+            :selected="selectedFilterChips.includes('Entertainment')"
+            @click="handleFilterChipClick('Entertainment')"
+          />
+          <DsChip
+            label="Technical"
+            variant="filter"
+            :selected="selectedFilterChips.includes('Technical')"
+            @click="handleFilterChipClick('Technical')"
+          />
+          <DsChip
+            label="Politics"
+            variant="filter"
+            :selected="selectedFilterChips.includes('Politics')"
+            @click="handleFilterChipClick('Politics')"
+          />
+          <DsChip
+            label="Sports"
+            variant="filter"
+            :selected="selectedFilterChips.includes('Sports')"
+            @click="handleFilterChipClick('Sports')"
+          />
+        </div>
+        <p class="filter-result">
+          <strong>Selected:</strong> {{ selectedFilterChips.join(", ") || "None" }}
+        </p>
+      </div>
+    </section>
+
+    <section class="demo-card">
+      <h3>Input chips</h3>
+      <p class="section-description">Input chips represent complex information like entities or attributes.</p>
+      <div class="chips-section">
+        <p class="section-label">Selected contacts:</p>
+        <div class="chips-row">
+          <DsChip
+            label="John Doe"
+            variant="input"
+            selected
+            :selected="selectedInputChips.includes('John Doe')"
+            removable
+            @remove="handleInputChipRemove('John Doe')"
+          />
+          <DsChip
+            label="Jane Smith"
+            variant="input"
+            :selected="selectedInputChips.includes('Jane Smith')"
+            removable
+            @remove="handleInputChipRemove('Jane Smith')"
+          />
+          <DsChip
+            label="Alex Johnson"
+            variant="input"
+            :selected="selectedInputChips.includes('Alex Johnson')"
+            removable
+            @remove="handleInputChipRemove('Alex Johnson')"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-card">
+      <h3>Chip states</h3>
+      <p class="section-description">Interactive and disabled states for all chip types.</p>
+      <div class="chips-column">
+        <div class="chips-row">
+          <DsChip label="Default" variant="assist" />
+          <DsChip label="With icon" variant="assist" icon="add" />
           <DsChip label="Removable" variant="assist" removable />
         </div>
-      </template>
-    </DocsSection>
-
-    <DocsSection
-      title="Filter chips"
-      description="Filter chips toggle selection to refine displayed content."
-    >
-      <template #preview>
-        <div class="chips-section">
-          <p class="section-label">Select categories:</p>
-          <div class="chips-row">
-            <DsChip
-              label="Entertainment"
-              variant="filter"
-              :selected="selectedFilterChips.includes('Entertainment')"
-              @click="handleFilterChipClick('Entertainment')"
-            />
-            <DsChip
-              label="Technical"
-              variant="filter"
-              :selected="selectedFilterChips.includes('Technical')"
-              @click="handleFilterChipClick('Technical')"
-            />
-            <DsChip
-              label="Politics"
-              variant="filter"
-              :selected="selectedFilterChips.includes('Politics')"
-              @click="handleFilterChipClick('Politics')"
-            />
-            <DsChip
-              label="Sports"
-              variant="filter"
-              :selected="selectedFilterChips.includes('Sports')"
-              @click="handleFilterChipClick('Sports')"
-            />
-          </div>
-          <p class="filter-result">
-            <strong>Selected:</strong> {{ selectedFilterChips.join(", ") || "None" }}
-          </p>
+        <div class="chips-row">
+          <DsChip label="Selected" variant="filter" selected />
+          <DsChip label="Unselected" variant="filter" />
+          <DsChip label="Disabled" variant="filter" disabled />
         </div>
-      </template>
-    </DocsSection>
-
-    <DocsSection
-      title="Input chips"
-      description="Input chips represent complex information like entities or attributes."
-    >
-      <template #preview>
-        <div class="chips-section">
-          <p class="section-label">Selected contacts:</p>
-          <div class="chips-row">
-            <DsChip
-              label="John Doe"
-              variant="input"
-              selected
-              :selected="selectedInputChips.includes('John Doe')"
-              removable
-              @remove="handleInputChipRemove('John Doe')"
-            />
-            <DsChip
-              label="Jane Smith"
-              variant="input"
-              :selected="selectedInputChips.includes('Jane Smith')"
-              removable
-              @remove="handleInputChipRemove('Jane Smith')"
-            />
-            <DsChip
-              label="Alex Johnson"
-              variant="input"
-              :selected="selectedInputChips.includes('Alex Johnson')"
-              removable
-              @remove="handleInputChipRemove('Alex Johnson')"
-            />
-          </div>
+        <div class="chips-row">
+          <DsChip label="Selected" variant="input" selected />
+          <DsChip label="Unselected" variant="input" />
+          <DsChip label="Disabled" variant="input" disabled />
         </div>
-      </template>
-    </DocsSection>
-
-    <DocsSection title="Chip states" description="Interactive and disabled states for all chip types.">
-      <template #preview>
-        <div class="chips-column">
-          <div class="chips-row">
-            <DsChip label="Default" variant="assist" />
-            <DsChip label="With icon" variant="assist" icon="add" />
-            <DsChip label="Removable" variant="assist" removable />
-          </div>
-          <div class="chips-row">
-            <DsChip label="Selected" variant="filter" selected />
-            <DsChip label="Unselected" variant="filter" />
-            <DsChip label="Disabled" variant="filter" disabled />
-          </div>
-          <div class="chips-row">
-            <DsChip label="Selected" variant="input" selected />
-            <DsChip label="Unselected" variant="input" />
-            <DsChip label="Disabled" variant="input" disabled />
-          </div>
-        </div>
-      </template>
-    </DocsSection>
+      </div>
+    </section>
 
     <article class="guidance-card">
       <h3>Usage guidance</h3>
