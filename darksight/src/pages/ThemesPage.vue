@@ -1,13 +1,13 @@
 <template>
   <section class="themes-page">
-    <div>
+    <header class="hero">
       <div class="header-subtitle">UI Component Library</div>
       <h2 class="header-title">Themes</h2>
       <p>
         Themes define the visual foundation of the system through color, contrast, and surface tokens.
         Use consistent theme variables to support branding, accessibility, and light/dark experiences.
       </p>
-    </div>
+    </header>
 
     <article class="theme-preview-card">
       <header class="theme-preview-header theme-preview-header--light">

@@ -2,7 +2,7 @@
     <section>
         <header class="hero">
         <div class="header-subtitle">UI Component Library</div>
-        <h2 class="header-title">Buttons</h2>
+        <h2 class="header-title">Button</h2>
         <p>
             Buttons trigger user actions and represent the primary, secondary, and contextual commands in an interface.
             Use clear labels, consistent hierarchy, and appropriate states to guide interaction.

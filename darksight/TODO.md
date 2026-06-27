@@ -1,10 +1,24 @@
-- [x] Revert DocsSection dark-mode global overrides in `src/components/DocsSection.vue`
-- [x] Localize and normalize dark-mode styling in `src/pages/TooltipPage.vue` to match other pages
-- [x] Localize and normalize dark-mode styling in `src/pages/SnackbarPage.vue` to match other pages
-- [x] Verify Tooltip and Snackbar pages in dark mode visually
+# Chip Component Implementation TODO
 
-- [x] Add type-specific `.ds-snackbar__close` styles for info/success/error/warning in `styles.css` (light theme)
-- [x] Add dark-theme type-specific `.ds-snackbar__close` styles under `:root[data-theme="dark"]` in `styles.css`
-- [x] Verify close button sizing/layout remains unchanged
-- [x] Add missing icons to all buttons in "Underline + icon tab" example on Tabs page
-- [x] Verify underline + icon tabs render with icons for every tab
+## Task: Create Chip component and page similar to M3 spec
+
+### Information Gathered:
+- Components use Vue 3 `<script setup>` pattern with defineProps
+- Pages follow a hero header + content structure with DocsSection pattern
+- Router imports pages dynamically with meta for breadcrumb/title/description
+- Styling is either component-scoped or global in styles.css
+
+### Plan:
+1. [x] Confirm plan with user - APPROVED
+2. [ ] Create DsChip.vue component with M3 chip variants
+3. [ ] Create ChipPage.vue documentation page
+4. [ ] Update router/index.js with /chips route
+
+### Dependent Files to be edited:
+- darksight/src/components/DsChip.vue (new file)
+- darksight/src/pages/ChipPage.vue (new file)
+- darksight/src/router/index.js (add chips route)
+
+### Followup steps:
+- Test the component with npm run dev
+- Verify router navigation works

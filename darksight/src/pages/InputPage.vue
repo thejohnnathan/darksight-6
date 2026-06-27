@@ -1,8 +1,8 @@
 <template>
-  <section class="inputs-page">
+  <section class="input-page">
     <header class="hero">
     <div class="header-subtitle">UI Component Library</div>
-    <h2 class="header-title">Inputs</h2>
+    <h2 class="header-title">Input</h2>
     <p>
       Input fields capture user data in forms and workflows, with clear labels and supportive feedback.
       Design input states carefully to communicate focus, errors, and disabled behavior.
@@ -10,7 +10,7 @@
     </header>
 
     <h4 class="heading-with-line">Text Input Variants</h4>
-    <div class="inputs-demo">
+    <div class="input-demo">
       <div class="input-row">
         <span class="input-index">1</span>
         <div class="input-example">
@@ -61,7 +61,7 @@
     </div>
 
     <h4 class="heading-with-line">Text Field States</h4>
-    <div class="inputs-demo">
+    <div class="input-demo">
       <div class="input-row">
         <span class="input-index">1</span>
         <div class="input-example">
@@ -115,11 +115,11 @@
 </template>
 
 <style scoped>
-.inputs-page {
+.input-page {
   width: 100%;
 }
 
-.inputs-demo {
+.input-demo {
   display: flex;
   flex-direction: column;
   gap: 28px;
@@ -332,7 +332,7 @@
 }
 
 @media (max-width: 768px) {
-  .inputs-demo {
+  .input-demo {
     gap: 20px;
     margin-bottom: 28px;
   }
@@ -381,7 +381,7 @@
 }
 
 @media (max-width: 576px) {
-  .inputs-demo {
+  .input-demo {
     gap: 16px;
     margin-bottom: 24px;
   }

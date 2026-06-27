@@ -77,11 +77,12 @@ const breadcrumbIconPathMap = {
 };
 
 const groupedComponentLinks = [
-  { to: "/buttons", label: "Buttons" },
-  { to: "/inputs", label: "Inputs" },
-  { to: "/radio-buttons", label: "Radio Buttons" },
+  { to: "/button", label: "Button" },
+  { to: "/input", label: "Input" },
+  { to: "/radio-button", label: "Radio Button" },
   { to: "/search-input", label: "Search Input" },
-  { to: "/card", label: "Card" }
+  { to: "/card", label: "Card" },
+  { to: "/chip", label: "Chip" }
 ];
 
 const groupedNavigationLinks = [
@@ -92,6 +93,7 @@ const groupedNavigationLinks = [
 ];
 
 const groupedFeedbackLinks = [
+  { to: "/badge", label: "Badge" },
   { to: "/snackbar", label: "Snackbar" },
   { to: "/tooltip", label: "Tooltip" }
 ];
@@ -267,18 +269,50 @@ onBeforeUnmount(() => {
           </li>
           <li class="nav-section-label">Components</li>
           <li>
-            <DsTooltip text="Buttons" placement="right" :disabled="isCollapsed" class="nav-tooltip-wrap">
+            <DsTooltip text="Badge" placement="right" :disabled="isCollapsed" class="nav-tooltip-wrap">
               <RouterLink
-                to="/buttons"
+                to="/badge"
                 class="nav-link"
                 active-class="active"
-                @mouseenter="showNavTooltip('Buttons', $event)"
+                @mouseenter="showNavTooltip('Badge', $event)"
                 @mouseleave="hideNavTooltip"
-                @focus="showNavTooltip('Buttons', $event)"
+                @focus="showNavTooltip('Badge', $event)"
+                @blur="hideNavTooltip"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M480-480Zm-400 0q0-88 34-163t93-130q59-55 136-83.5T508-879q17 2 27 14.5t7 29.5q-3 17-16.5 27t-30.5 9q-69-3-129.5 19.5T259-713q-46 44-72.5 103.5T160-480q0 134 93 227t227 93q69 0 128.5-26.5T712-259q46-48 68-109t19-127q-1-17 9-30.5t27-16.5q17-3 29.5 7t14.5 27q6 87-22.5 164T774-208q-57 62-133 95T480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480Zm640-120q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35Z"/></svg>
+                <span class="link-label">Badge</span>
+              </RouterLink>
+            </DsTooltip>
+          </li>
+          <li>
+            <DsTooltip text="Button" placement="right" :disabled="isCollapsed" class="nav-tooltip-wrap">
+              <RouterLink
+                to="/button"
+                class="nav-link"
+                active-class="active"
+                @mouseenter="showNavTooltip('Button', $event)"
+                @mouseleave="hideNavTooltip"
+                @focus="showNavTooltip('Button', $event)"
                 @blur="hideNavTooltip"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M160-240q-33 0-56.5-23.5T80-320v-320q0-33 23.5-56.5T160-720h640q33 0 56.5 23.5T880-640v320q0 33-23.5 56.5T800-240H160Zm0-80h640v-320H160v320Zm130-40h60v-90h90v-60h-90v-90h-60v90h-90v60h90v90Zm-130 40v-320 320Z"/></svg>
-                <span class="link-label">Buttons</span>
+                <span class="link-label">Button</span>
+              </RouterLink>
+            </DsTooltip>
+          </li>
+          <li>
+            <DsTooltip text="Chip" placement="right" :disabled="isCollapsed" class="nav-tooltip-wrap">
+              <RouterLink
+                to="/chip"
+                class="nav-link"
+                active-class="active"
+                @mouseenter="showNavTooltip('Chip', $event)"
+                @mouseleave="hideNavTooltip"
+                @focus="showNavTooltip('Chip', $event)"
+                @blur="hideNavTooltip"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M160-240q-33 0-56.5-23.5T80-320v-320q0-33 23.5-56.5T160-720h640q33 0 56.5 23.5T880-640v320q0 33-23.5 56.5T800-240H160Zm0-80h640v-320H160v320Zm130-40h60v-90h90v-60h-90v-90h-60v90h-90v60h90v90Zm-130 40v-320 320Z"/></svg>
+                <span class="link-label">Chip</span>
               </RouterLink>
             </DsTooltip>
           </li>
@@ -317,16 +351,16 @@ onBeforeUnmount(() => {
           <li>
             <DsTooltip text="Inputs" placement="right" :disabled="isCollapsed" class="nav-tooltip-wrap">
               <RouterLink
-                to="/inputs"
+                to="/input"
                 class="nav-link"
                 active-class="active"
-                @mouseenter="showNavTooltip('Inputs', $event)"
+                @mouseenter="showNavTooltip('Input', $event)"
                 @mouseleave="hideNavTooltip"
-                @focus="showNavTooltip('Inputs', $event)"
+                @focus="showNavTooltip('Input', $event)"
                 @blur="hideNavTooltip"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M280-160v-80h400v80H280Zm-80-160q-33 0-56.5-23.5T120-400v-320q0-33 23.5-56.5T200-800h560q33 0 56.5 23.5T840-720v320q0 33-23.5 56.5T760-320H200Zm0-80h560v-320H200v320Zm0 0v-320 320Z"/></svg>
-                <span class="link-label">Inputs</span>
+                <span class="link-label">Input</span>
               </RouterLink>
             </DsTooltip>
           </li>
@@ -347,18 +381,18 @@ onBeforeUnmount(() => {
             </DsTooltip>
           </li>
           <li>
-            <DsTooltip text="Radio Buttons" placement="right" :disabled="isCollapsed" class="nav-tooltip-wrap">
+            <DsTooltip text="Radio Button" placement="right" :disabled="isCollapsed" class="nav-tooltip-wrap">
               <RouterLink
-                to="/radio-buttons"
+                to="/radio-button"
                 class="nav-link"
                 active-class="active"
-                @mouseenter="showNavTooltip('Radio Buttons', $event)"
+                @mouseenter="showNavTooltip('Radio Button', $event)"
                 @mouseleave="hideNavTooltip"
-                @focus="showNavTooltip('Radio Buttons', $event)"
+                @focus="showNavTooltip('Radio Button', $event)"
                 @blur="hideNavTooltip"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Zm0 200q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280Zm0-240q17 0 28.5-11.5T520-560q0-17-11.5-28.5T480-600q-17 0-28.5 11.5T440-560q0 17 11.5 28.5T480-520Z"/></svg>
-                <span class="link-label">Radio Buttons</span>
+                <span class="link-label">Radio Button</span>
               </RouterLink>
             </DsTooltip>
           </li>
