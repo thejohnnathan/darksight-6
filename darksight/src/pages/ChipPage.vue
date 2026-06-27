@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import DsChip from "../components/DsChip.vue";
+import DocsSection from "../components/DocsSection.vue";
 
 const chipApiItems = [
   { name: "label", description: "Chip text content." },

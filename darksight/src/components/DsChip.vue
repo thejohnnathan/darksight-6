@@ -96,7 +96,7 @@ const getIconPath = (iconName) => {
         width="18px"
         fill="currentColor"
       >
-        <path :d="getIconPath('close')" />
+        <path d="M293.6 246.6L246.6 293.6l84.4-84.4-84.4-84.4 47-47 84.4 84.4L293.6 246.6zM589.4 246.6l-47-47-84.4 84.4 84.4 84.4 47-47-84.4-84.4z" />
       </svg>
     </span>
   </button>
@@ -116,7 +116,7 @@ const getIconPath = (iconName) => {
         width="18px"
         fill="currentColor"
       >
-        <path :d="getIconPath('checkmark')" />
+        <path d="M381.6 498.8l-118-118L212 432.4l169.6 169.6 296-296-51.2-51.2-243.8 245.2z" />
       </svg>
     </span>
     <span v-else class="ds-chip__checkbox" />
@@ -129,7 +129,7 @@ const getIconPath = (iconName) => {
         width="18px"
         fill="currentColor"
       >
-        <path :d="getIconPath('close')" />
+        <path d="M293.6 246.6L246.6 293.6l84.4-84.4-84.4-84.4 47-47 84.4 84.4L293.6 246.6zM589.4 246.6l-47-47-84.4 84.4 84.4 84.4 47-47-84.4-84.4z" />
       </svg>
     </span>
   </button>
@@ -149,7 +149,7 @@ const getIconPath = (iconName) => {
         width="18px"
         fill="currentColor"
       >
-        <path :d="getIconPath('checkmark')" />
+        <path d="M381.6 498.8l-118-118L212 432.4l169.6 169.6 296-296-51.2-51.2-243.8 245.2z" />
       </svg>
     </span>
     <span class="ds-chip__label">{{ label }}</span>
@@ -161,7 +161,7 @@ const getIconPath = (iconName) => {
         width="18px"
         fill="currentColor"
       >
-        <path :d="getIconPath('close')" />
+        <path d="M293.6 246.6L246.6 293.6l84.4-84.4-84.4-84.4 47-47 84.4 84.4L293.6 246.6zM589.4 246.6l-47-47-84.4 84.4 84.4 84.4 47-47-84.4-84.4z" />
       </svg>
     </span>
   </button>
