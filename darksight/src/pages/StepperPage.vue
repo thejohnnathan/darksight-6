@@ -114,7 +114,7 @@
             </div>
           </div>
           <div class="stepper-icon-tabs__progress">
-            <span style="width: 33%"></span>
+            <span class="stepper-icon-tabs__progress-fill stepper-icon-tabs__progress-fill--33"></span>
           </div>
         </div>
       </article>

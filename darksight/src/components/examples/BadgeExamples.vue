@@ -1,18 +1,9 @@
 <script setup>
-import Badge from "../components/Badge.vue";
+import Badge from "../Badge.vue";
 </script>
 
 <template>
-  <section class="badge-page">
-    <header class="hero">
-      <div class="header-subtitle">UI Component Library</div>
-      <h2 class="header-title">Badge</h2>
-      <p>
-        Badges display a small amount of information, such as a count or label,
-        as a notification or indicator attached to an element.
-      </p>
-    </header>
-
+  <section class="examples-root">
     <section class="demo-card">
       <h3>Badge positions</h3>
       <p class="section-description">Position badges at different corner points of their container.</p>
@@ -177,34 +168,13 @@ import Badge from "../components/Badge.vue";
         </div>
       </div>
     </section>
-
-    <article class="demo-card">
-      <h2>Guidance</h2>
-      <ul>
-        <li>Use primary badges for notifications or counts needing attention.</li>
-        <li>Use semantic colors (success, warning, error) to convey meaning.</li>
-        <li>Position at corner points based on reading direction and importance.</li>
-        <li>The dot variant works well for status indicators on avatars.</li>
-      </ul>
-    </article>
   </section>
 </template>
 
 <style scoped>
-.badge-page {
+.examples-root {
   display: grid;
   gap: 1.5rem;
-}
-
-.hero {
-  display: grid;
-  gap: 0.5rem;
-}
-
-.hero p {
-  margin: 0;
-  max-width: 65ch;
-  color: var(--text-primary);
 }
 
 .demo-card {
@@ -217,11 +187,6 @@ import Badge from "../components/Badge.vue";
   gap: 0.75rem;
 }
 
-.demo-card h2 {
-  margin: 0;
-  font-size: 1.1rem;
-}
-
 .demo-card ul {
   margin: 0;
   padding-left: 1rem;
@@ -230,7 +195,6 @@ import Badge from "../components/Badge.vue";
   color: var(--text-primary);
 }
 
-/* Position grid */
 .badge-positions-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(140px, 1fr));
@@ -238,12 +202,15 @@ import Badge from "../components/Badge.vue";
   width: 100%;
 }
 
-.badge-position-item {
+.badge-position-item,
+.badge-size-item,
+.badge-color-item,
+.badge-dot-item,
+.badge-avatar-item {
   display: flex;
   justify-content: center;
 }
 
-/* Sizes grid */
 .badge-sizes-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(100px, 1fr));
@@ -252,12 +219,6 @@ import Badge from "../components/Badge.vue";
   align-items: center;
 }
 
-.badge-size-item {
-  display: flex;
-  justify-content: center;
-}
-
-/* Colors grid */
 .badge-colors-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(100px, 1fr));
@@ -265,26 +226,7 @@ import Badge from "../components/Badge.vue";
   width: 100%;
 }
 
-.badge-color-item {
-  display: flex;
-  justify-content: center;
-}
-
-/* Dots grid */
-.badge-dots-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(80px, 1fr));
-  gap: 1rem;
-  width: 100%;
-  align-items: center;
-}
-
-.badge-dot-item {
-  display: flex;
-  justify-content: center;
-}
-
-/* Avatars grid */
+.badge-dots-grid,
 .badge-avatars-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(80px, 1fr));
@@ -293,70 +235,41 @@ import Badge from "../components/Badge.vue";
   align-items: center;
 }
 
-.badge-avatar-item {
-  display: flex;
-  justify-content: center;
-}
-
-/* Demo components */
-.demo-btn {
-  position: relative;
-  width: 100%;
-  min-width: 100px;
-  border: 1px solid var(--border-color);
-  background: var(--surface-elevated);
-  color: var(--text-primary);
-  border-radius: 10px;
-  padding: 0.55rem 0.75rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
-}
-
-.demo-btn:hover,
-.demo-btn:focus-visible {
-  border-color: color-mix(in srgb, var(--accent-color, #7c4dff) 60%, var(--border-color) 40%);
-  box-shadow: 0 8px 20px rgba(124, 77, 255, 0.16);
-  transform: translateY(-1px);
-}
-
-.demo-btn-small {
-  position: relative;
-  width: 100%;
-  min-width: 80px;
-  border: 1px solid var(--border-color);
-  background: var(--surface-elevated);
-  color: var(--text-primary);
-  border-radius: 10px;
-  padding: 0.45rem 0.65rem;
-  font-weight: 600;
-  font-size: 13px;
-  cursor: pointer;
-  transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
-}
-
-.demo-btn-small:hover,
-.demo-btn-small:focus-visible {
-  border-color: color-mix(in srgb, var(--accent-color, #7c4dff) 60%, var(--border-color) 40%);
-  box-shadow: 0 8px 20px rgba(124, 77, 255, 0.16);
-  transform: translateY(-1px);
-}
-
+.demo-btn,
+.demo-btn-small,
 .demo-btn-large {
   position: relative;
   width: 100%;
-  min-width: 100px;
   border: 1px solid var(--border-color);
   background: var(--surface-elevated);
   color: var(--text-primary);
   border-radius: 10px;
-  padding: 0.65rem 0.85rem;
   font-weight: 600;
-  font-size: 15px;
   cursor: pointer;
   transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
 }
 
+.demo-btn {
+  min-width: 100px;
+  padding: 0.55rem 0.75rem;
+}
+
+.demo-btn-small {
+  min-width: 80px;
+  padding: 0.45rem 0.65rem;
+  font-size: 13px;
+}
+
+.demo-btn-large {
+  min-width: 100px;
+  padding: 0.65rem 0.85rem;
+  font-size: 15px;
+}
+
+.demo-btn:hover,
+.demo-btn:focus-visible,
+.demo-btn-small:hover,
+.demo-btn-small:focus-visible,
 .demo-btn-large:hover,
 .demo-btn-large:focus-visible {
   border-color: color-mix(in srgb, var(--accent-color, #7c4dff) 60%, var(--border-color) 40%);
@@ -364,7 +277,6 @@ import Badge from "../components/Badge.vue";
   transform: translateY(-1px);
 }
 
-/* Avatar components */
 .avatar-badge-wrap {
   position: relative;
   display: inline-flex;
@@ -394,45 +306,23 @@ import Badge from "../components/Badge.vue";
   color: #ffffff;
 }
 
-/* Dark mode */
-:root[data-theme="dark"] .badge-page .demo-card {
+:root[data-theme="dark"] .demo-card {
   background: var(--dark-surface-2);
   border-color: var(--dark-border);
 }
 
-:root[data-theme="dark"] .badge-page .demo-card h2 {
+:root[data-theme="dark"] .demo-card ul,
+:root[data-theme="dark"] .demo-btn,
+:root[data-theme="dark"] .demo-btn-small,
+:root[data-theme="dark"] .demo-btn-large {
   color: var(--dark-text-primary);
 }
 
-:root[data-theme="dark"] .badge-page p {
-  color: var(--dark-text-primary);
-}
-
-:root[data-theme="dark"] .badge-page .demo-card ul {
-  color: var(--dark-text-primary);
-}
-
-:root[data-theme="dark"] .badge-page .demo-btn,
-:root[data-theme="dark"] .badge-page .demo-btn-small,
-:root[data-theme="dark"] .badge-page .demo-btn-large {
+:root[data-theme="dark"] .demo-btn,
+:root[data-theme="dark"] .demo-btn-small,
+:root[data-theme="dark"] .demo-btn-large {
   background: var(--dark-surface-3);
   border-color: var(--dark-border);
-  color: var(--dark-text-primary);
-}
-
-:root[data-theme="dark"] .badge-page .demo-btn:hover,
-:root[data-theme="dark"] .badge-page .demo-btn:focus-visible,
-:root[data-theme="dark"] .badge-page .demo-btn-small:hover,
-:root[data-theme="dark"] .badge-page .demo-btn-small:focus-visible,
-:root[data-theme="dark"] .badge-page .demo-btn-large:hover,
-:root[data-theme="dark"] .badge-page .demo-btn-large:focus-visible {
-  border-color: var(--dark-primary);
-  box-shadow: 0 8px 20px rgba(139, 123, 255, 0.22);
-}
-
-:root[data-theme="dark"] .badge-page .demo-avatar {
-  background: var(--dark-surface-3);
-  color: var(--dark-text-secondary);
 }
 
 @media (max-width: 600px) {

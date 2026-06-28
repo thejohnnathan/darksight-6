@@ -117,7 +117,7 @@
           <h4 class="breadcrumb-example__title">Dot progress</h4>
           <div class="breadcrumb-progress" aria-label="Dot progress breadcrumb">
             <div class="breadcrumb-progress__rail"></div>
-            <div class="breadcrumb-progress__fill" style="width: 52%"></div>
+            <div class="breadcrumb-progress__fill breadcrumb-progress__fill--52"></div>
             <div class="breadcrumb-progress__steps">
               <div class="breadcrumb-progress__step is-done">Cart</div>
               <div class="breadcrumb-progress__step is-done">Delivery</div>

@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from "vue";
-import DsChip from "../components/DsChip.vue";
+import Chip from "../components/Chip.vue";
 
 const selectedFilterChips = ref(["Entertainment"]);
 const selectedInputChips = ref(["John Doe"]);
@@ -37,10 +37,10 @@ const handleInputChipRemove = (label) => {
       <h3>Assist chips</h3>
       <p class="section-description">Assist chips perform actions and appear in dynamic contexts.</p>
       <div class="chips-row">
-        <DsChip label="Add to calendar" variant="assist" icon="add" />
-        <DsChip label="Starred" variant="assist" icon="star" />
-        <DsChip label="Schedule" variant="assist" icon="calendar" />
-        <DsChip label="Removable" variant="assist" removable />
+        <Chip label="Add to calendar" variant="assist" icon="add" />
+        <Chip label="Starred" variant="assist" icon="star" />
+        <Chip label="Schedule" variant="assist" icon="calendar" />
+        <Chip label="Removable" variant="assist" removable />
       </div>
       <h4>API</h4>
       <ul>
@@ -65,25 +65,25 @@ const handleInputChipRemove = (label) => {
       <div class="chips-section">
         <p class="section-label">Select categories:</p>
         <div class="chips-row">
-          <DsChip
+          <Chip
             label="Entertainment"
             variant="filter"
             :selected="selectedFilterChips.includes('Entertainment')"
             @click="handleFilterChipClick('Entertainment')"
           />
-          <DsChip
+          <Chip
             label="Technical"
             variant="filter"
             :selected="selectedFilterChips.includes('Technical')"
             @click="handleFilterChipClick('Technical')"
           />
-          <DsChip
+          <Chip
             label="Politics"
             variant="filter"
             :selected="selectedFilterChips.includes('Politics')"
             @click="handleFilterChipClick('Politics')"
           />
-          <DsChip
+          <Chip
             label="Sports"
             variant="filter"
             :selected="selectedFilterChips.includes('Sports')"
@@ -102,7 +102,7 @@ const handleInputChipRemove = (label) => {
       <div class="chips-section">
         <p class="section-label">Selected contacts:</p>
         <div class="chips-row">
-          <DsChip
+          <Chip
             label="John Doe"
             variant="input"
             selected
@@ -110,14 +110,14 @@ const handleInputChipRemove = (label) => {
             removable
             @remove="handleInputChipRemove('John Doe')"
           />
-          <DsChip
+          <Chip
             label="Jane Smith"
             variant="input"
             :selected="selectedInputChips.includes('Jane Smith')"
             removable
             @remove="handleInputChipRemove('Jane Smith')"
           />
-          <DsChip
+          <Chip
             label="Alex Johnson"
             variant="input"
             :selected="selectedInputChips.includes('Alex Johnson')"
@@ -133,19 +133,19 @@ const handleInputChipRemove = (label) => {
       <p class="section-description">Interactive and disabled states for all chip types.</p>
       <div class="chips-column">
         <div class="chips-row">
-          <DsChip label="Default" variant="assist" />
-          <DsChip label="With icon" variant="assist" icon="add" />
-          <DsChip label="Removable" variant="assist" removable />
+          <Chip label="Default" variant="assist" />
+          <Chip label="With icon" variant="assist" icon="add" />
+          <Chip label="Removable" variant="assist" removable />
         </div>
         <div class="chips-row">
-          <DsChip label="Selected" variant="filter" selected />
-          <DsChip label="Unselected" variant="filter" />
-          <DsChip label="Disabled" variant="filter" disabled />
+          <Chip label="Selected" variant="filter" selected />
+          <Chip label="Unselected" variant="filter" />
+          <Chip label="Disabled" variant="filter" disabled />
         </div>
         <div class="chips-row">
-          <DsChip label="Selected" variant="input" selected />
-          <DsChip label="Unselected" variant="input" />
-          <DsChip label="Disabled" variant="input" disabled />
+          <Chip label="Selected" variant="input" selected />
+          <Chip label="Unselected" variant="input" />
+          <Chip label="Disabled" variant="input" disabled />
         </div>
       </div>
     </section>

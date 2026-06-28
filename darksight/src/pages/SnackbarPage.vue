@@ -28,7 +28,7 @@
         </article>
       </div>
       <div class="spacer">
-      <DsSnackbar
+      <Snackbar
         v-if="snackbar.current.value"
         :type="snackbar.current.value.type"
         :message="snackbar.current.value.message"
@@ -59,7 +59,7 @@
 
 <script setup>
 import { computed, onMounted } from 'vue'
-import DsSnackbar from '../components/DsSnackbar.vue'
+import Snackbar from '../components/Snackbar.vue'
 import { useSnackbar } from '../composables/useSnackbar'
 
 const snackbarItems = [

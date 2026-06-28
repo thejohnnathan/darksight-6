@@ -1,5 +1,5 @@
 <script setup>
-import DsTooltip from "../components/DsTooltip.vue";
+import Tooltip from "../components/Tooltip.vue";
 </script>
 
 <template>
@@ -17,21 +17,21 @@ import DsTooltip from "../components/DsTooltip.vue";
       <h3>Basic usage</h3>
       <p>Hover or focus the examples to preview different placements.</p>
       <div class="examples-grid">
-        <DsTooltip text="Add to favorites" placement="top">
+        <Tooltip text="Add to favorites" placement="top">
           <button class="demo-btn" type="button">Top</button>
-        </DsTooltip>
+        </Tooltip>
 
-        <DsTooltip text="Open details panel" placement="right">
+        <Tooltip text="Open details panel" placement="right">
           <button class="demo-btn" type="button">Right</button>
-        </DsTooltip>
+        </Tooltip>
 
-        <DsTooltip text="Download report" placement="bottom">
+        <Tooltip text="Download report" placement="bottom">
           <button class="demo-btn" type="button">Bottom</button>
-        </DsTooltip>
+        </Tooltip>
 
-        <DsTooltip text="Remove item" placement="left">
+        <Tooltip text="Remove item" placement="left">
           <button class="demo-btn" type="button">Left</button>
-        </DsTooltip>
+        </Tooltip>
       </div>
 
       <h4>API</h4>

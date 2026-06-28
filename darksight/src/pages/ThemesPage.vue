@@ -20,27 +20,27 @@
           <h4 class="theme-pane-title theme-pane-title--light">Core palette</h4>
           <div class="theme-color-row">
             <div class="theme-color-chip theme-color-chip--light theme-color-chip--light-bg">
-              <div class="theme-swatch" style="background: #ffffff"></div>
+              <div class="theme-swatch theme-swatch--light-bg"></div>
               <p class="theme-swatch-label theme-swatch-label--light">Background</p>
             </div>
             <div class="theme-color-chip theme-color-chip--light theme-color-chip--light-surface">
-              <div class="theme-swatch" style="background: #f8fafc"></div>
+              <div class="theme-swatch theme-swatch--light-surface"></div>
               <p class="theme-swatch-label theme-swatch-label--light">Surface</p>
             </div>
             <div class="theme-color-chip theme-color-chip--light theme-color-chip--light-primary">
-              <div class="theme-swatch" style="background: var(--primary-color)"></div>
+              <div class="theme-swatch theme-swatch--light-primary"></div>
               <p class="theme-swatch-label theme-swatch-label--light">Primary</p>
             </div>
             <div class="theme-color-chip theme-color-chip--light theme-color-chip--light-success">
-              <div class="theme-swatch" style="background: #22c55e"></div>
+              <div class="theme-swatch theme-swatch--light-success"></div>
               <p class="theme-swatch-label theme-swatch-label--light">Success</p>
             </div>
             <div class="theme-color-chip theme-color-chip--light theme-color-chip--light-warning">
-              <div class="theme-swatch" style="background: #f59e0b"></div>
+              <div class="theme-swatch theme-swatch--light-warning"></div>
               <p class="theme-swatch-label theme-swatch-label--light">Warning</p>
             </div>
             <div class="theme-color-chip theme-color-chip--light theme-color-chip--light-danger">
-              <div class="theme-swatch" style="background: #ef4444"></div>
+              <div class="theme-swatch theme-swatch--light-danger"></div>
               <p class="theme-swatch-label theme-swatch-label--light">Danger</p>
             </div>
           </div>
@@ -73,27 +73,27 @@
           <h4 class="theme-pane-title">Core palette</h4>
           <div class="theme-color-row">
             <div class="theme-color-chip">
-              <div class="theme-swatch" style="background: var(--dark-bg)"></div>
+              <div class="theme-swatch theme-swatch--dark-bg"></div>
               <p class="theme-swatch-label">Background</p>
             </div>
             <div class="theme-color-chip">
-              <div class="theme-swatch" style="background: var(--dark-surface-2)"></div>
+              <div class="theme-swatch theme-swatch--dark-surface"></div>
               <p class="theme-swatch-label">Surface</p>
             </div>
             <div class="theme-color-chip">
-              <div class="theme-swatch" style="background: var(--dark-primary)"></div>
+              <div class="theme-swatch theme-swatch--dark-primary"></div>
               <p class="theme-swatch-label">Primary</p>
             </div>
             <div class="theme-color-chip">
-              <div class="theme-swatch" style="background: var(--dark-success)"></div>
+              <div class="theme-swatch theme-swatch--dark-success"></div>
               <p class="theme-swatch-label">Success</p>
             </div>
             <div class="theme-color-chip">
-              <div class="theme-swatch" style="background: var(--dark-warning)"></div>
+              <div class="theme-swatch theme-swatch--dark-warning"></div>
               <p class="theme-swatch-label">Warning</p>
             </div>
             <div class="theme-color-chip">
-              <div class="theme-swatch" style="background: var(--dark-danger)"></div>
+              <div class="theme-swatch theme-swatch--dark-danger"></div>
               <p class="theme-swatch-label">Danger</p>
             </div>
           </div>
