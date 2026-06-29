@@ -430,6 +430,7 @@ main section:last-child {
     width: var(--sidebar-collapsed-width);
     max-width: var(--sidebar-collapsed-width);
     padding: 14px 8px;
+    align-items: center;
 }
 
 /* Container helpers */
@@ -1593,6 +1594,7 @@ button.btn-small {
     z-index: 2;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    width: 100%;
 }
 
 .navigation-panel li {
@@ -1695,6 +1697,7 @@ button.btn-small {
 
 .navigation-panel.collapsed .nav-collapse-btn {
     position: relative;
+    left: 34px;
 }
 
 .navigation-panel ul {
@@ -1704,6 +1707,7 @@ button.btn-small {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    width: 100%;
 }
 
 .navigation-panel li {
@@ -1724,8 +1728,6 @@ button.btn-small {
     letter-spacing: 0.01em;
     text-decoration: none;
     transition: background-color 0.2s ease, color 0.2s ease;
-    width: 100%;
-    min-width: 100%;
     width: 100%;
 }
 
@@ -1761,12 +1763,24 @@ button.btn-small {
     display: none;
 }
 
+.navigation-panel.collapsed nav {
+    align-items: center;
+    place-items: center;
+    width: fit-content;
+}
+
 .navigation-panel.collapsed .nav-link {
-    justify-content: center;
+    display: grid;
+    place-items: center;
     padding: 8px;
     overflow: visible;
     isolation: isolate;
     z-index: 3;
+    width: 100%;
+}
+
+.navigation-panel.collapsed .nav-link svg {
+    margin: 0;
 }
 
 .navigation-panel.collapsed .link-label {
@@ -1774,14 +1788,16 @@ button.btn-small {
 }
 .navigation-panel.collapsed .nav-panel-header {
     justify-content: center;
+    width: fit-content;
 }
 
 .navigation-panel.collapsed .nav-panel-brand {
     justify-content: center;
+    width: fit-content;
 }
 
 .navigation-panel.collapsed .nav-panel-brand::before {
-    margin-left: 12px;
+    margin-left: 0;
 }
 
 .navigation-panel li a:hover {
@@ -4355,15 +4371,18 @@ button.btn-small {
 /* Tooltips */
 .tooltip {
   position: relative;
-  display: flex;
-  width: 100%;
+  display: inline-flex;
+  width: auto;
+  max-width: 100%;
   z-index: 0;
 }
 
 .tooltip-trigger {
-  display: flex;
-  width: 100%;
+  display: inline-flex;
+  width: auto;
+  max-width: 100%;
 }
+
 
 .tooltip-bubble {
   --tooltip-surface: color-mix(in srgb, var(--surface-elevated, #1e1f27) 92%, black 8%);
