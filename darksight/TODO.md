@@ -1,0 +1,10 @@
+- [x] Inspect tooltip and nav-collapsed tooltip styles in `darksight/styles.css`
+- [x] Create plan and get user confirmation
+- [x] Unify tooltip arrow geometry (size/rotation/offset) across both tooltip systems
+- [x] Align tooltip color/border tokens for consistent light/dark theme rendering
+- [x] Review dark-theme overrides for tooltip consistency
+- [x] Final verification pass
+- [x] Approve simplification plan for nav-link tooltips
+- [ ] Remove collapsed nav pseudo-element tooltip rules from `darksight/styles.css`
+- [ ] Reuse shared tooltip behavior for collapsed nav links
+- [ ] Verify collapsed tooltip visibility, right-side placement, and light/dark consistency

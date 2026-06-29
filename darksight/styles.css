@@ -1595,28 +1595,11 @@ button.btn-small {
     -ms-overflow-style: none;
 }
 
-.navigation-panel .nav-tooltip-wrap {
-    width: 100%;
-    display: block;
-    position: relative;
-    z-index: 5;
+.navigation-panel li {
+    overflow: visible;
 }
 
-.navigation-panel .nav-tooltip-wrap .tooltip,
-.navigation-panel .nav-tooltip-wrap .tooltip-trigger,
-.navigation-panel .nav-tooltip-wrap .nav-link {
-    width: 100%;
-}
 
-.navigation-panel .nav-tooltip-wrap .tooltip[data-tooltip-visible="true"][data-placement="right"] {
-    z-index: 100000;
-}
-
-.navigation-panel .nav-tooltip-wrap .tooltip-bubble[data-tooltip-visible="true"][data-placement="right"] {
-    z-index: 100001;
-    visibility: visible;
-    opacity: 1;
-}
 
 .nav-panel-brand {
     display: inline-flex;
@@ -1749,6 +1732,9 @@ button.btn-small {
 .navigation-panel .nav-link {
     gap: 10px;
     width: 100% !important;
+    position: relative;
+    overflow: visible;
+    z-index: 2;
 }
 
 .navigation-panel .nav-link svg {
@@ -1777,6 +1763,9 @@ button.btn-small {
 .navigation-panel.collapsed .nav-link {
     justify-content: center;
     padding: 8px;
+    overflow: visible;
+    isolation: isolate;
+    z-index: 3;
 }
 
 .navigation-panel.collapsed .link-label {
@@ -4376,12 +4365,16 @@ button.btn-small {
 }
 
 .tooltip-bubble {
+  --tooltip-surface: color-mix(in srgb, var(--surface-elevated, #1e1f27) 92%, black 8%);
+  --tooltip-border: color-mix(in srgb, var(--border-color, #ffffff) 12%, transparent 88%);
+  --tooltip-arrow-size: 0.45rem;
+  --tooltip-arrow-offset: calc(var(--tooltip-arrow-size) * -0.5);
   position: absolute;
   z-index: 99999;
   pointer-events: none;
-  background: color-mix(in srgb, var(--surface-elevated, #1e1f27) 92%, black 8%);
+  background: var(--tooltip-surface);
   color: var(--text-primary, #ffffff);
-  border: 1px solid color-mix(in srgb, var(--border-color, #ffffff) 12%, transparent 88%);
+  border: 1px solid var(--tooltip-border);
   border-radius: 8px;
   padding: 0.35rem 0.6rem;
   font-size: 0.74rem;
@@ -4395,11 +4388,9 @@ button.btn-small {
 .tooltip-bubble::after {
   content: "";
   position: absolute;
-  width: 0.45rem;
-  height: 0.45rem;
-  background: inherit;
-  border-right: inherit;
-  border-bottom: inherit;
+  width: var(--tooltip-arrow-size);
+  height: var(--tooltip-arrow-size);
+  background: var(--tooltip-surface);
 }
 
 .tooltip-bubble.is-top {
@@ -4409,9 +4400,15 @@ button.btn-small {
 }
 
 .tooltip-bubble.is-top::after {
-  left: calc(50% - 0.2rem);
-  bottom: -0.23rem;
+  left: calc(50% - (var(--tooltip-arrow-size) / 2));
+  bottom: var(--tooltip-arrow-offset);
   transform: rotate(45deg);
+  border-right: 1px solid var(--tooltip-border);
+  border-bottom: 1px solid var(--tooltip-border);
+}
+
+:root:not([data-theme="dark"]) .tooltip-bubble.is-top::after {
+  display: none;
 }
 
 .tooltip-bubble.is-right {
@@ -4421,9 +4418,11 @@ button.btn-small {
 }
 
 .tooltip-bubble.is-right::after {
-  left: -0.22rem;
-  top: calc(50% - 0.2rem);
+  left: var(--tooltip-arrow-offset);
+  top: calc(50% - (var(--tooltip-arrow-size) / 2));
   transform: rotate(135deg);
+  border-right: 1px solid var(--tooltip-border);
+  border-bottom: 1px solid var(--tooltip-border);
 }
 
 .tooltip-bubble.is-bottom {
@@ -4433,9 +4432,11 @@ button.btn-small {
 }
 
 .tooltip-bubble.is-bottom::after {
-  left: calc(50% - 0.2rem);
-  top: -0.23rem;
+  left: calc(50% - (var(--tooltip-arrow-size) / 2));
+  top: var(--tooltip-arrow-offset);
   transform: rotate(225deg);
+  border-right: 1px solid var(--tooltip-border);
+  border-bottom: 1px solid var(--tooltip-border);
 }
 
 .tooltip-bubble.is-left {
@@ -4445,9 +4446,11 @@ button.btn-small {
 }
 
 .tooltip-bubble.is-left::after {
-  right: -0.22rem;
-  top: calc(50% - 0.2rem);
+  right: var(--tooltip-arrow-offset);
+  top: calc(50% - (var(--tooltip-arrow-size) / 2));
   transform: rotate(-45deg);
+  border-right: 1px solid var(--tooltip-border);
+  border-bottom: 1px solid var(--tooltip-border);
 }
 
 .tooltip-fade-enter-active,

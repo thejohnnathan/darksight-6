@@ -69,19 +69,19 @@ const breadcrumbIconPathMap = {
 };
 
 const navItems = [
-  { to: "/badge", label: "Badge", tooltip: "Badge", iconPath: breadcrumbIconPathMap.badge || breadcrumbIconPathMap.documentation },
-  { to: "/button", label: "Button", tooltip: "Button", iconPath: breadcrumbIconPathMap.buttons },
-  { to: "/chip", label: "Chip", tooltip: "Chip", iconPath: breadcrumbIconPathMap.card },
-  { to: "/breadcrumb", label: "Breadcrumb", tooltip: "Breadcrumb", iconPath: breadcrumbIconPathMap.breadcrumb },
-  { to: "/card", label: "Card", tooltip: "Card", iconPath: breadcrumbIconPathMap.card },
-  { to: "/input", label: "Input", tooltip: "Inputs", iconPath: breadcrumbIconPathMap.inputs },
-  { to: "/pagination", label: "Pagination", tooltip: "Pagination", iconPath: breadcrumbIconPathMap.pagination },
-  { to: "/radio-button", label: "Radio Button", tooltip: "Radio Button", iconPath: breadcrumbIconPathMap["radio-buttons"] },
-  { to: "/search-input", label: "Search Input", tooltip: "Search Input", iconPath: breadcrumbIconPathMap["search-input"] },
-  { to: "/snackbar", label: "Snackbar", tooltip: "Snackbar", iconPath: breadcrumbIconPathMap.snackbar },
-  { to: "/stepper", label: "Stepper", tooltip: "Stepper", iconPath: breadcrumbIconPathMap.stepper },
-  { to: "/tabs", label: "Tabs", tooltip: "Tabs", iconPath: breadcrumbIconPathMap.tabs },
-  { to: "/tooltip", label: "Tooltip", tooltip: "Tooltip", iconPath: breadcrumbIconPathMap.tooltip },
+  { to: "/badge", label: "Badge", ariaLabel: "Badge", iconPath: breadcrumbIconPathMap.badge || breadcrumbIconPathMap.documentation },
+  { to: "/button", label: "Button", ariaLabel: "Button", iconPath: breadcrumbIconPathMap.buttons },
+  { to: "/chip", label: "Chip", ariaLabel: "Chip", iconPath: breadcrumbIconPathMap.card },
+  { to: "/breadcrumb", label: "Breadcrumb", ariaLabel: "Breadcrumb", iconPath: breadcrumbIconPathMap.breadcrumb },
+  { to: "/card", label: "Card", ariaLabel: "Card", iconPath: breadcrumbIconPathMap.card },
+  { to: "/input", label: "Input", ariaLabel: "Inputs", iconPath: breadcrumbIconPathMap.inputs },
+  { to: "/pagination", label: "Pagination", ariaLabel: "Pagination", iconPath: breadcrumbIconPathMap.pagination },
+  { to: "/radio-button", label: "Radio Button", ariaLabel: "Radio Button", iconPath: breadcrumbIconPathMap["radio-buttons"] },
+  { to: "/search-input", label: "Search Input", ariaLabel: "Search Input", iconPath: breadcrumbIconPathMap["search-input"] },
+  { to: "/snackbar", label: "Snackbar", ariaLabel: "Snackbar", iconPath: breadcrumbIconPathMap.snackbar },
+  { to: "/stepper", label: "Stepper", ariaLabel: "Stepper", iconPath: breadcrumbIconPathMap.stepper },
+  { to: "/tabs", label: "Tabs", ariaLabel: "Tabs", iconPath: breadcrumbIconPathMap.tabs },
+  { to: "/tooltip", label: "Tooltip", ariaLabel: "Tooltip", iconPath: breadcrumbIconPathMap.tooltip },
 ];
 
 const groupedComponentLinks = [
@@ -214,19 +214,67 @@ onBeforeUnmount(() => {
         <ul>
           <li class="nav-section-label">MAIN</li>
           <li>
-            <RouterLink to="/getting-started" class="nav-link" active-class="active">
+            <Tooltip v-if="isCollapsed" text="Getting Started" placement="right">
+              <RouterLink
+                to="/getting-started"
+                class="nav-link"
+                active-class="active"
+                aria-label="Getting Started"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M240-200h480v-80H240v80Zm0-160h480v-80H240v80Zm0-160h320v-80H240v80Zm-40 400q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Z"/></svg>
+                <span class="link-label">Getting Started</span>
+              </RouterLink>
+            </Tooltip>
+            <RouterLink
+              v-else
+              to="/getting-started"
+              class="nav-link"
+              active-class="active"
+            >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M240-200h480v-80H240v80Zm0-160h480v-80H240v80Zm0-160h320v-80H240v80Zm-40 400q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Z"/></svg>
               <span class="link-label">Getting Started</span>
             </RouterLink>
           </li>
           <li>
-            <RouterLink to="/documentation" class="nav-link" active-class="active">
+            <Tooltip v-if="isCollapsed" text="Documentation" placement="right">
+              <RouterLink
+                to="/documentation"
+                class="nav-link"
+                active-class="active"
+                aria-label="Documentation"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M320-240h320v-80H320v80Zm0-160h320v-80H320v80Zm0-160h200v-80H320v80Zm-120 440q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h360l280 280v360q0 33-23.5 56.5T760-120H200Z"/></svg>
+                <span class="link-label">Documentation</span>
+              </RouterLink>
+            </Tooltip>
+            <RouterLink
+              v-else
+              to="/documentation"
+              class="nav-link"
+              active-class="active"
+            >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M320-240h320v-80H320v80Zm0-160h320v-80H320v80Zm0-160h200v-80H320v80Zm-120 440q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h360l280 280v360q0 33-23.5 56.5T760-120H200Z"/></svg>
               <span class="link-label">Documentation</span>
             </RouterLink>
           </li>
           <li>
-            <RouterLink to="/themes" class="nav-link" active-class="active">
+            <Tooltip v-if="isCollapsed" text="Themes" placement="right">
+              <RouterLink
+                to="/themes"
+                class="nav-link"
+                active-class="active"
+                aria-label="Themes"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 32.5-156t88-127Q256-817 330-848.5T488-880q80 0 151 27.5t124.5 76q53.5 48.5 85 115T880-518q0 115-70 176.5T640-280h-74q-9 0-12.5 5t-3.5 11q0 12 15 34.5t15 51.5q0 50-27.5 74T480-80Z"/></svg>
+                <span class="link-label">Themes</span>
+              </RouterLink>
+            </Tooltip>
+            <RouterLink
+              v-else
+              to="/themes"
+              class="nav-link"
+              active-class="active"
+            >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 32.5-156t88-127Q256-817 330-848.5T488-880q80 0 151 27.5t124.5 76q53.5 48.5 85 115T880-518q0 115-70 176.5T640-280h-74q-9 0-12.5 5t-3.5 11q0 12 15 34.5t15 51.5q0 50-27.5 74T480-80Z"/></svg>
               <span class="link-label">Themes</span>
             </RouterLink>
@@ -234,14 +282,30 @@ onBeforeUnmount(() => {
 
           <li class="nav-section-label">Components</li>
           <li v-for="item in navItems" :key="item.to">
-            <Tooltip :text="item.tooltip" placement="right" class="nav-tooltip-wrap">
-              <RouterLink :to="item.to" class="nav-link" active-class="active">
+            <Tooltip v-if="isCollapsed" :text="item.ariaLabel" placement="right">
+              <RouterLink
+                :to="item.to"
+                class="nav-link"
+                active-class="active"
+                :aria-label="item.ariaLabel"
+              >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true">
                   <path :d="item.iconPath" />
                 </svg>
                 <span class="link-label">{{ item.label }}</span>
               </RouterLink>
             </Tooltip>
+            <RouterLink
+              v-else
+              :to="item.to"
+              class="nav-link"
+              active-class="active"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true">
+                <path :d="item.iconPath" />
+              </svg>
+              <span class="link-label">{{ item.label }}</span>
+            </RouterLink>
           </li>
         </ul>
       </nav>
