@@ -1,6 +1,7 @@
-- [x] Update tooltip sizing/layout styles in `darksight/styles.css` so collapsed sidebar tooltips are visible for all nav links
-- [x] Verify styling consistency for collapsed nav-link tooltip wrappers
-- [ ] Refactor tooltip rendering to a viewport-level layer (Teleport) so collapsed sidebar tooltips are not clipped by nav panel
-- [ ] Remove now-unnecessary collapsed tooltip width overrides in `darksight/styles.css` after Teleport update
-- [x] Fix collapsed navigation panel extra right-side space by normalizing nav/list/link width rules in `darksight/styles.css`
-- [ ] Verify collapsed sidebar spacing after CSS update
+# TODO
+
+- [x] Rebalance desktop spacing/padding around the 1440px max-width shell
+- [x] Tune spacing at 1200px and 992px breakpoints
+- [x] Refine spacing at 768px, 576px, and 400px breakpoints
+- [x] Ensure collapsed sidebar container spacing parity
+- [x] Mark completion after CSS update

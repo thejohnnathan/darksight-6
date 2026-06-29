@@ -72,11 +72,10 @@
 /* Layout styles for html and body */
 html,
 body {
-    height: 100%;
+    height: fit-content;
     width: 100%;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     line-height: 1.5;
-    background: #fff;
     color: #111;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -106,20 +105,23 @@ body::-webkit-scrollbar {
 }
 
 /* Layout styles for main content */
-.app {
+#app {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+    background: var(--background-color);
 }
 
 main {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    padding-top: 24px;
-    background: radial-gradient(circle at 20% 30%, rgba(106, 92, 255, 0.08), transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(236, 72, 153, 0.08), transparent 40%),
-        #f8fafc;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 main section:last-child {
@@ -129,21 +131,24 @@ main section:last-child {
 .heading-panel {
     background-color: var(--toolbar-bg);
     width: 100%;
+    max-width: 1440px;
     height: 80px;
     max-height: 80px;
     position: fixed;
     top: 0;
-    left: 0;
-    border-bottom: 1px solid var(--toolbar-border);
+    border: 1px solid var(--toolbar-border);
+    border-top: 0 !important;
+    border-bottom-right-radius: 18px;
+    border-bottom-left-radius: 18px;
     box-shadow: var(--toolbar-shadow);
-    z-index: 120;
+    z-index: 800;
     display: flex;
     align-items: center;
+    margin: 0;
 }
 
 .top-nav {
     width: 100%;
-    margin: 0 auto;
     padding: 0 24px;
     display: flex;
     align-items: center;
@@ -240,7 +245,7 @@ main section:last-child {
     position: relative;
     display: inline-flex;
     align-items: center;
-    z-index: 300;
+    z-index: 1200;
 }
 
 .top-link-dropdown {
@@ -296,7 +301,7 @@ main section:last-child {
     border-radius: 10px;
     padding: 8px;
     box-shadow: 0 16px 32px rgba(15, 23, 42, 0.12);
-    z-index: 9999;
+    z-index: 1300;
     display: flex;
     flex-direction: column;
     gap: 2px;
@@ -414,7 +419,6 @@ main section:last-child {
     height: calc(100vh - 96px);
     position: fixed;
     top: 88px;
-    left: 16px;
     border: 1px solid var(--toolbar-border);
     border-radius: 18px;
     box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
@@ -438,20 +442,21 @@ main section:last-child {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    max-width: 1200px;
-    width: calc(100% - 272px);
+    max-width: 1440px;
+    width: calc(100% - 320px);
     margin: 0 auto;
-    padding: 0 24px;
-    margin-top: 80px;
+    padding: 0 28px;
+    margin-top: 104px;
     gap: 0;
-    /* Adjust based on the height of the heading panel */
-    margin-left: calc(240px + 32px);
-    transition: margin-left 0.25s ease;
+    /* Adjusted for 1440px max canvas */
+    margin-left: calc(240px + 56px);
+    transition: margin-left 0.25s ease, width 0.25s ease, padding 0.25s ease;
     flex-wrap: wrap;
 }
 
 .container.container-collapsed {
-    margin-left: calc(80px + 32px);
+    margin-left: calc(80px + 56px);
+    width: calc(100% - 160px);
 }
 
 .page-breadcrumb {
@@ -1776,7 +1781,7 @@ button.btn-small {
     overflow: visible;
     isolation: isolate;
     z-index: 3;
-    width: 100%;
+    width: 100%;    
 }
 
 .navigation-panel.collapsed .nav-link svg {
@@ -1862,16 +1867,23 @@ button.btn-small {
     .top-nav {
         max-width: 100%;
         gap: 20px;
-        padding: 0 20px;
+        padding: 0 18px;
     }
 
     .top-nav-links {
-        gap: 20px;
+        gap: 18px;
     }
 
     .container {
         max-width: 100%;
+        width: calc(100% - 300px);
+        margin-left: calc(240px + 44px);
         padding: 0 20px;
+    }
+
+    .container.container-collapsed {
+        width: calc(100% - 148px);
+        margin-left: calc(80px + 44px);
     }
 
     .header-title {
@@ -1906,7 +1918,7 @@ button.btn-small {
 
     .top-dropdown {
         position: relative;
-        z-index: 350;
+        z-index: 1200;
     }
 
     .top-dropdown-menu {
@@ -1916,7 +1928,7 @@ button.btn-small {
         width: 220px;
         min-width: 180px;
         max-width: min(300px, calc(100vw - 32px));
-        z-index: 9999;
+        z-index: 1300;
     }
 
     .top-nav-actions {
@@ -1932,7 +1944,7 @@ button.btn-small {
 
     .navigation-panel {
         top: 80px;
-        left: 12px;
+        left: 24px;
         height: calc(100vh - 92px);
         width: 220px;
         max-width: 220px;
@@ -1945,13 +1957,14 @@ button.btn-small {
     }
 
     .container {
-        margin-top: 72px;
-        margin-left: calc(220px + 24px);
-        padding: 0 16px;
+        width: calc(100% - 276px);
+        margin-left: calc(220px + 32px);
+        padding: 0 18px;
     }
 
     .container.container-collapsed {
-        margin-left: calc(72px + 24px);
+        width: calc(100% - 124px);
+        margin-left: calc(72px + 32px);
     }
 
     .header-title {
@@ -2058,7 +2071,7 @@ button.btn-small {
         width: 220px;
         min-width: 180px;
         max-width: calc(100vw - 24px);
-        z-index: 9999;
+        z-index: 1300;
     }
 
     .navigation-panel {
@@ -2090,10 +2103,10 @@ button.btn-small {
 
     .container,
     .container.container-collapsed {
-        width: calc(100% - 108px);
-        margin-left: calc(72px + 24px);
-        margin-top: 72px;
-        padding: 12px;
+        width: calc(100% - 112px);
+        margin-left: 98px;
+        margin-top: 84px;
+        padding: 14px 12px;
     }
 
     .header-subtitle {
@@ -2168,7 +2181,7 @@ button.btn-small {
 
     .top-dropdown {
         position: relative;
-        z-index: 350;
+        z-index: 1200;
     }
 
     .top-dropdown-menu {
@@ -2179,12 +2192,12 @@ button.btn-small {
         width: 200px;
         min-width: 170px;
         max-width: calc(100vw - 20px);
-        z-index: 9999;
+        z-index: 1300;
     }
 
     .navigation-panel {
         top: 80px;
-        left: 10px;
+        left: 12px;
         width: 64px;
         max-width: 64px;
         height: calc(100vh - 90px);
@@ -2198,10 +2211,10 @@ button.btn-small {
 
     .container,
     .container.container-collapsed {
-        width: calc(100% - 94px);
-        margin-left: calc(64px + 20px);
-        margin-top: 72px;
-        padding: 10px;
+        width: calc(100% - 92px);
+        margin-left: 78px;
+        margin-top: 84px;
+        padding: 12px 10px;
     }
 
     .header-subtitle {
@@ -2293,7 +2306,7 @@ button.btn-small {
 
     .top-dropdown {
         position: relative;
-        z-index: 350;
+        z-index: 1200;
     }
 
     .top-dropdown-menu {
@@ -2304,7 +2317,7 @@ button.btn-small {
         width: 170px;
         min-width: 150px;
         max-width: calc(100vw - 16px);
-        z-index: 9999;
+        z-index: 1300;
     }
 
 
@@ -2312,8 +2325,8 @@ button.btn-small {
     .container.container-collapsed {
         width: 100%;
         margin-left: 0;
-        margin-top: 68px;
-        padding: 8px;
+        margin-top: 70px;
+        padding: 12px 10px;
     }
 
     .header-title {
@@ -4826,7 +4839,8 @@ button.btn-small {
     background: var(--dark-primary-hover);
 }
 
-:root[data-theme="dark"] main {
+:root[data-theme="dark"] body,
+:root[data-theme="dark"] #app {
     background: radial-gradient(circle at 20% 30%, rgba(139, 123, 255, 0.16), transparent 40%),
         radial-gradient(circle at 80% 70%, rgba(56, 189, 248, 0.14), transparent 40%),
         var(--dark-bg);
